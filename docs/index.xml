@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Revolt&#39;s NoteBook</title>
+    <link>https://lovemoganna.github.io/revolt/</link>
+    <description>Recent content on Revolt&#39;s NoteBook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 13 Jun 2020 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://lovemoganna.github.io/revolt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Theme preview</title>
+      <link>https://lovemoganna.github.io/revolt/post/even/</link>
+      <pubDate>Tue, 10 Jul 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/even/</guid>
+      <description>&lt;p&gt;just is even theme preview&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ploymode</title>
+      <link>https://lovemoganna.github.io/revolt/post/polymode/</link>
+      <pubDate>Sat, 13 Jun 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/polymode/</guid>
+      <description>&lt;p&gt;What&amp;rsquo;s the polymode?&lt;/p&gt;
+&lt;p&gt;polymode 是在单个EMACS buffer里面多个major mode的一个框架.值得注意
+的是,它相当灵活的遵从面向对象编程的设计.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Emacs Regular Expression</title>
+      <link>https://lovemoganna.github.io/revolt/post/init-emacs-regular-expression/</link>
+      <pubDate>Sat, 06 Jun 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/init-emacs-regular-expression/</guid>
+      <description>The main function query-replace-regexp Test demo 1 2 3 4 &amp;lt;input type=&amp;#34;text&amp;#34; name=&amp;#34;username&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;password&amp;#34; name=&amp;#34;password&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; name=&amp;#34;email&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; name=&amp;#34;country&amp;#34;&amp;gt; Basic Concept 正则表达式的交互开发,你可以使用 re-builder 命令,在一个分离的 buffer里提供即时的视觉反馈,更方便</description>
+    </item>
+    
+    <item>
+      <title>Arch Linux Tips</title>
+      <link>https://lovemoganna.github.io/revolt/post/init-archlinux/</link>
+      <pubDate>Wed, 03 Jun 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/init-archlinux/</guid>
+      <description>Generating a list of installed packages in archlinux 1  pacman -Q -q   </description>
+    </item>
+    
+    <item>
+      <title>Termux</title>
+      <link>https://lovemoganna.github.io/revolt/post/init-termux/</link>
+      <pubDate>Wed, 03 Jun 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/init-termux/</guid>
+      <description>How to connection your andriod device use adb MY device: google pixel 2xl.
+ first: enter develop state,press your device version,and use your  hand press seven times.then your enter develop state.
+  two: select usb debug
+  three: install adb, then run adb devices,if is the fllowed result,you success connect your phone in use adb.
+1  adb devices     Mission: slove my phone termux cannot ssh connect question.</description>
+    </item>
+    
+    <item>
+      <title>Org Mode Table</title>
+      <link>https://lovemoganna.github.io/revolt/post/org-table/</link>
+      <pubDate>Tue, 26 May 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/org-table/</guid>
+      <description>&lt;p&gt;Org as a spreadsheet system,just for test my poor salary&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TamperMonkey</title>
+      <link>https://lovemoganna.github.io/revolt/post/init-tampermonkey/</link>
+      <pubDate>Tue, 26 May 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/init-tampermonkey/</guid>
+      <description>&lt;p&gt;This is a freedom use user own script tools in website.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Curl</title>
+      <link>https://lovemoganna.github.io/revolt/post/init-curl/</link>
+      <pubDate>Sun, 24 May 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/init-curl/</guid>
+      <description>&lt;p&gt;curl 是一个url资源下载器.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Shell</title>
+      <link>https://lovemoganna.github.io/revolt/post/unix-power-tools/</link>
+      <pubDate>Tue, 19 May 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/unix-power-tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unix power tools</title>
+      <link>https://lovemoganna.github.io/revolt/post/init-unix-power-tools/</link>
+      <pubDate>Tue, 19 May 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/init-unix-power-tools/</guid>
+      <description>&lt;p&gt;Unix is not an operating system as much as it is a way of thinking.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Elisp Basic</title>
+      <link>https://lovemoganna.github.io/revolt/post/basic2/</link>
+      <pubDate>Tue, 24 Mar 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/basic2/</guid>
+      <description>&lt;p&gt;Elisp Basic Example.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Elisp introduction</title>
+      <link>https://lovemoganna.github.io/revolt/post/introduction/</link>
+      <pubDate>Tue, 24 Mar 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/introduction/</guid>
+      <description>&lt;p&gt;Elisp Notational Conventions.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>git faq</title>
+      <link>https://lovemoganna.github.io/revolt/post/git/</link>
+      <pubDate>Tue, 24 Mar 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/git/</guid>
+      <description>&lt;p&gt;slove git using procedure problems.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>gnutls</title>
+      <link>https://lovemoganna.github.io/revolt/post/gnutls/</link>
+      <pubDate>Sun, 22 Mar 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/gnutls/</guid>
+      <description>&lt;p&gt;learn how to use gnutls slove cask contract melpa.org 443 question.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>hugo faq</title>
+      <link>https://lovemoganna.github.io/revolt/post/hugo/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/hugo/</guid>
+      <description>&lt;p&gt;hugo blog feature explore.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>mermaid</title>
+      <link>https://lovemoganna.github.io/revolt/post/mermaid/</link>
+      <pubDate>Thu, 19 Mar 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/mermaid/</guid>
+      <description>&lt;p&gt;chart tools &lt;!-- raw HTML omitted --&gt;mermaid&lt;!-- raw HTML omitted --&gt; intergrate with Emacs.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Slime</title>
+      <link>https://lovemoganna.github.io/revolt/post/slime/</link>
+      <pubDate>Thu, 19 Mar 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/slime/</guid>
+      <description>&lt;p&gt;learn how to use Slime mode in Emacs.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>stumpwm</title>
+      <link>https://lovemoganna.github.io/revolt/post/stumpwm/</link>
+      <pubDate>Wed, 18 Mar 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/stumpwm/</guid>
+      <description>&lt;p&gt;Stumpwm - happy hacking tools.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Eshell as a main shell</title>
+      <link>https://lovemoganna.github.io/revolt/post/eshell/</link>
+      <pubDate>Tue, 17 Mar 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/eshell/</guid>
+      <description>&lt;p&gt;这篇文章翻译自Reddit.一个充满神奇的地方。原文出自
+&lt;a href=&#34;https://www.reddit.com/r/emacs/comments/6y3q4k/yes%5Feshell%5Fis%5Fmy%5Fmain%5Fshell/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>cp command</title>
+      <link>https://lovemoganna.github.io/revolt/post/cp/</link>
+      <pubDate>Sun, 15 Mar 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/cp/</guid>
+      <description>&lt;p&gt;linux command cp demo test.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>A sets of X command</title>
+      <link>https://lovemoganna.github.io/revolt/post/x/</link>
+      <pubDate>Sat, 14 Mar 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/x/</guid>
+      <description>&lt;p&gt;X系列命令DEMO.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>LAMBDA EXPRESSIONS</title>
+      <link>https://lovemoganna.github.io/revolt/post/lambda-expressions/</link>
+      <pubDate>Mon, 09 Mar 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/lambda-expressions/</guid>
+      <description>&lt;p&gt;A lambda expression is a function object written in lisp.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ELISP FAQ</title>
+      <link>https://lovemoganna.github.io/revolt/post/faq/</link>
+      <pubDate>Tue, 25 Feb 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/faq/</guid>
+      <description>&lt;p&gt;There have a little Elisp question.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Org Mode</title>
+      <link>https://lovemoganna.github.io/revolt/post/org-mode/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/org-mode/</guid>
+      <description>&lt;p&gt;Org can edit, format, extract, export, and publish source code blocks.&lt;/p&gt;
+&lt;p&gt;Org can also compile and execute a source code block, then capture the results.&lt;/p&gt;
+&lt;p&gt;Users can control how live they want each source code block by
+tweaking the header arguments (see Using Header Arguments) for
+compiling, execution, extraction, and exporting.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

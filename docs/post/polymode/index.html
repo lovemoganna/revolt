@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Ploymode - Revolt&#39;s NoteBook</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Revolt" /><meta name="description" content="What&amp;rsquo;s the polymode?
+polymode 是在单个EMACS buffer里面多个major mode的一个框架.值得注意 的是,它相当灵活的遵从面向对象编程的设计.
+" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with theme even" />
+
+
+<link rel="canonical" href="https://lovemoganna.github.io/revolt/post/polymode/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/revolt/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/revolt/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/revolt/favicon-16x16.png">
+<link rel="manifest" href="/revolt/manifest.json">
+<link rel="mask-icon" href="/revolt/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/revolt/dist/even.27d242e6.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Ploymode" />
+<meta property="og:description" content="What&rsquo;s the polymode?
+polymode 是在单个EMACS buffer里面多个major mode的一个框架.值得注意
+的是,它相当灵活的遵从面向对象编程的设计." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lovemoganna.github.io/revolt/post/polymode/" />
+<meta property="article:published_time" content="2020-06-13T00:00:00+08:00" />
+<meta property="article:modified_time" content="2020-06-14T17:02:54+08:00" /><meta property="og:locale" content="en_US" />
+<meta itemprop="name" content="Ploymode">
+<meta itemprop="description" content="What&rsquo;s the polymode?
+polymode 是在单个EMACS buffer里面多个major mode的一个框架.值得注意
+的是,它相当灵活的遵从面向对象编程的设计.">
+<meta itemprop="datePublished" content="2020-06-13T00:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2020-06-14T17:02:54&#43;08:00" />
+<meta itemprop="wordCount" content="2250">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ploymode"/>
+<meta name="twitter:description" content="What&rsquo;s the polymode?
+polymode 是在单个EMACS buffer里面多个major mode的一个框架.值得注意
+的是,它相当灵活的遵从面向对象编程的设计."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/revolt/" class="logo">Revolt</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/revolt/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/revolt/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/revolt/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/revolt/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/revolt/" class="logo">Revolt</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/revolt/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/revolt/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/revolt/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/revolt/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Ploymode</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> Sat Jun 13 2020 </span>
+        
+          <span class="more-meta"> 2250 words </span>
+          <span class="more-meta"> 5 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#install">Install</a></li>
+    <li><a href="#how-to-use">How to use</a></li>
+    <li><a href="#basic-concept">Basic concept</a>
+      <ul>
+        <li><a href="#terminlogy">Terminlogy</a></li>
+        <li><a href="#configuration">Configuration</a></li>
+        <li><a href="#class-hieracrhy">Class Hieracrhy</a></li>
+        <li><a href="#general-naming-conventions">General Naming Conventions</a></li>
+      </ul>
+    </li>
+    <li><a href="#defining-polymodes">Defining Polymodes</a>
+      <ul>
+        <li><a href="#hosts-modes">Hosts Modes</a></li>
+        <li><a href="#inner-modes">Inner Modes</a></li>
+        <li><a href="#polymodes"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> Polymodes</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>What&rsquo;s the polymode?</p>
+<p>polymode 是在单个EMACS buffer里面多个major mode的一个框架.值得注意
+的是,它相当灵活的遵从面向对象编程的设计.</p>
+<h2 id="install">Install</h2>
+<p><a href="https://polymode.github.io/installation">https://polymode.github.io/installation</a></p>
+<h2 id="how-to-use">How to use</h2>
+<p>所有 polymode 的键都是以 `polymode-prefix-key` 为前缀定义的,默认都
+是 `M-n`. `polymode-mode-map` 是所有 polymode 键盘映射的爹.</p>
+<p>记下键盘定义实际上没太大意义,用不惯自己改下就可以了.</p>
+<table>
+<thead>
+<tr>
+<th>Navigation</th>
+<th>Chunk Manipulation</th>
+<th>Exporting,Weaving,Tangling</th>
+<th>Evaluation of Chunks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>polymode-next-chunk</td>
+<td>polymode-toggle-chunk-narrowing</td>
+<td>polymode-tangle</td>
+<td>polymode-eval-region-or-chunk</td>
+</tr>
+<tr>
+<td>polymode-next-chunk-same-type</td>
+<td>polymode-mark-or-extend-chunk</td>
+<td>polymode-show-process-buffer</td>
+<td>polymode-eval-buffer-form-beg-to-point</td>
+</tr>
+</tbody>
+</table>
+<h2 id="basic-concept">Basic concept</h2>
+<p>内部的 <code>ploymode</code> 使用间接buffer来实现不同mode间的内部扫描.在
+polymode buffer里的每个内部的major mode有它自己的间接buffer来和它关
+联. <code>Host mode</code> 存活在 base buffer里面.因此,在polymode里面跳转mode
+就跟跳转emacs buffer一样快,因为它不跟其他 <code>MMM</code> <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 一样,不重新
+install major mode.</p>
+<p>By sibling buffers,we mean <code>base</code> or <code>indirect</code> buffers which are
+shared with the current buffer.</p>
+<h3 id="terminlogy">Terminlogy</h3>
+<dl>
+<dt>span</dt>
+<dd>是在EMACS同一major mode下的相邻和相同的文本区域.
+主要有4种类型的spans: <code>head</code>, <code>body</code>, <code>tail</code>, <code>host</code>.
+所有的spans都是左侧封闭,右侧开放的.例如,一个span扫描
+[3,5) 包含在位置3的字符,但是不包含位置5的字符.这是和
+EMACS的函数处理文本属性相一致的.</dd>
+<dt>chunk</dt>
+<dd>由一个或者多个 <code>spans</code> 组成的相邻区域.这里主要有两种类
+型的chunks:
+<ol>
+<li><code>host chunks</code>: 在host major mode中只包含一个 <code>span</code>.</li>
+<li><code>inner chunks</code>: 通常包含 <code>head</code>, <code>body</code>, <code>tail</code>, 这里的body指
+的是一些非host的一些其他mode.</li>
+</ol>
+</dd>
+<dt>polymode</dt>
+<dd>意味着下列其中之一:
+<ol>
+<li>在EMACS buffer里有效关联函数的汇总</li>
+<li>在EMACS buffers中install 函数bunch. Polymode可以使用像其他
+EMACS major mode,(例如在 <code>auto-mode-alist</code> 里放置),或者像一个
+major mode一样,为了在存在的EMACS mode 里install 函数.</li>
+<li>一个为polymode掌管配置的类对象 <code>pm-polymode</code>.</li>
+</ol>
+</dd>
+<dt>chunkmode</dt>
+<dd>更加特殊的 <code>hostmode</code> 和 <code>innermode</code> 含义
+<ol>
+<li>在host和inner chunks里关联函数的汇总</li>
+<li>由 <code>pm-host-hostmode</code>, <code>pm-inner-innermode</code>,
+<code>pm-inner-auto-chunkmode</code> 划分的配置对象.</li>
+</ol>
+</dd>
+</dl>
+<h3 id="configuration">Configuration</h3>
+<p>Host 和 inner chunks 通过 <code>pm-chunkmode</code> 类划分的对象被配置,
+<code>pm-chunkmode</code> 通常被引用作为 <code>chunkmodes</code>. 这些对象名字形式
+<code>poly-XYZ-hostmode</code> and <code>poly-XYZ-innnermode</code> 分别被引用作为
+<code>hostmodes</code> and <code>innermodes</code>.</p>
+<p>Polymodes 通过名带 <code>poly-XYZ-polymode</code> SCHEME的 <code>pm-polymode</code> 类对
+象来配置,这里的 <code>XYZ</code> 和在polymode函数 <code>poly-XYZ-mode</code> 里的一样.
+<code>poly-XYZ-polymode</code> 对象中的polymode在初始化期间被克隆并被存储在一
+个buffer-local variable <code>pm/polymode</code> 当中.此对象在所有sibling
+buffers之间被分享.</p>
+<p><code>Chunks</code> 和 <code>chunkmodes</code> 是不同的概念.Chunk 是一个文本片段,在一个
+buffer的同一个mode当中里面可能会有多个chunks.相比之下,每个buffer只
+有一种类型的chunkmode,每个chunk当中的行为通过chunkmode来明确.</p>
+<h3 id="class-hieracrhy">Class Hieracrhy</h3>
+<p>Polymode package uses <code>eieio</code> 来代表它的对象. 对所有 polymode类来
+讲,Root Class是 <code>eieio-instance-inheritor</code>,它提供了基于 <code>inheritance</code>
+的 <code>prototype</code>. 这意味着来源于polymode类的对象继承可以被克隆,为了
+动态的创建自定义对象的层次结构.</p>
+<p>Instance inheritance(or prototype inheritance) 意味着如果你改变一
+个父类对象的slot(插槽),所有的对象的子类和孙子类将会inherit 新值,除
+非它们明确的覆盖了插槽.</p>
+<p>这里有一些已经被定义的对象的bunch,你可以在 <code>polymode</code>,
+<code>poly-hostmodes</code>, 和 <code>poly-innermodes</code> 自定义组里检查下.</p>
+<p>Polymode Class Hierarchy:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">+--eieio-instance-inheritor
+   +--pm-root
+       +--pm-polymode
+       +--pm-chunkmode
+       |    +--pm-inner-chunkmode
+       |    |    +--pm-inner-auto-chunkmode
+       |    +--pm-host-chunkmode
+       +--pm-weaver
+       |    +--pm-shell-weaver
+       |    +--pm-callback-weaver
+       +--pm-exporter
+	    +--pm-shell-exporter
+	    +--pm-callback-exporter
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="general-naming-conventions">General Naming Conventions</h3>
+<p>User facing functionality is named with <code>polymode-</code>
+prefix. Polymodes are named with <code>poly-XYZ-mode</code> convention. Host,
+inner and polymode configuration objects are named
+<code>poly-XYZ-hostmode</code>, <code>poly-XYZ-innermode</code> and
+<code>poly-name-polymode</code>. Classes, methods and developer-oriented API
+have <code>pm-</code> prefix.</p>
+<h2 id="defining-polymodes">Defining Polymodes</h2>
+<p>Defining polymodes always starts with defining(or reusing) a hostmode and one
+or more innermodes.</p>
+<h3 id="hosts-modes">Hosts Modes</h3>
+<p>define the markdown hostmode:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nv">define-hostmode</span> <span class="nv">poly-markdown-hostmode</span>
+  <span class="nb">:mode</span> <span class="ss">&#39;markdown-mode</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>define-hostmode</code> is a macro which,in this case,defines an object
+<code>poly-markdown-hostmode</code> of class <code>pm-host-chunkmode</code>. 关键参数是
+slots,最重要的存在 <code>:mode</code> 意味着 emacs的 major mode应该在host
+chunks里面安装.</p>
+<p>当提供通过被子类继承父类的整个配置的时候.对于 <code>define-hostmode</code> 第
+二个可选参数的选项是父类hostmode.一个更加宽泛范围的hostmodes已经在
+<code>polymode-base.el</code> file中定义.你可以在你自己的 polymodes里面重新使
+用.</p>
+<h3 id="inner-modes">Inner Modes</h3>
+<p>Polymode defines two built-in types of innermodes.</p>
+<ul>
+<li><code>pm-inner-chunkmode</code> 允许在高级mode里面预先指定.</li>
+<li><code>pm-inner-auto-chunkmode</code> 即时 <code>span</code> 检测body的major mode.</li>
+</ul>
+<p>下面是对markdown的 YAML metadata的innermode:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nv">define-innermode</span> <span class="nv">polymode-markdown-yaml-metadata-innermode</span>
+  <span class="nb">:mode</span> <span class="ss">&#39;yaml-mode</span>
+  <span class="nb">:head-matcher</span> <span class="s">&#34;\`[ \t\n]*---\n&#34;</span>
+  <span class="nb">:tail-matcher</span> <span class="s">&#34;^---\n&#34;</span>
+  <span class="nb">:head-mode</span> <span class="ss">&#39;host</span>
+  <span class="nb">:tail-mode</span> <span class="ss">&#39;host</span>
+  <span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>和一个围起来的代码的 auto innermode:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nv">define-auto-innermode</span> <span class="nv">poly-markdown-fenced-code-innermode</span>
+  <span class="nb">:head-matcher</span> <span class="p">(</span><span class="nf">cons</span> <span class="s">&#34;^[ \t]*\\(```{?[[:alpha:]].*\n\\)&#34;</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="nb">:tail-matcher</span> <span class="p">(</span><span class="nf">cons</span> <span class="s">&#34;^[ \t]*\\(```\\)[ \t]*$&#34;</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="nb">:mode-matcher</span> <span class="p">(</span><span class="nf">cons</span> <span class="s">&#34;```[ \t]*{?\\(?:lang *= *\\)?\\([^ \t\n;=,}]+\\)&#34;</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="nb">:head-mode</span> <span class="ss">&#39;host</span>
+  <span class="nb">:tail-mode</span> <span class="ss">&#39;host</span><span class="p">)</span>
+  <span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>:head-matcher</code> 和 <code>:tail-matcher</code> 中的所有例子都是用来搜索 inner
+code chunks heads 和 tails正则表达式匹配模式. <code>:mode-matcher</code> 告诉
+polymode如何从chunk的head中找到major mode.三个matchers没一个都可以
+是一个regexp,一个(regex or submatch)样式的cons,或者应该返回mode名
+字的函数.</p>
+<p><code>:head-mode</code> 和 <code>:tail-mode</code> 指定的major mode分别用于head 和
+tail.特殊符号 <code>'host</code> 意味着 <code>host mode</code> 被用于head or tail.如果
+<code>'body</code>,即 chunk&rsquo;s body 的mode.Head and tail mode 默认是
+<code>poly-head-tail-mode</code>,这是非常基本的 prog mode,没有特殊功能.</p>
+<p>anonymous mode(aka mode-less)chunks 或者major mode 无法识别
+的情况,对于body span,Buffer local <code>polymode-default-inner-mode</code> 可
+以被指定默认的mode.当这个变量是 <code>nil</code> (默认)时,即是一个 <code>host mode</code>,也是一个已经被安装的特殊 <code>poly-fallback-mode</code>.这个mode被安装
+取决于innermode配置对象 <code>:mode</code> 插槽的值.</p>
+<h3 id="polymodes"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> Polymodes</h3>
+<p>最终,使用 host and inner modes定义要比定义 <code>poly-markdown-mode</code>
+polymode 要更容易:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nv">define-polymode</span> <span class="nv">poly-markdown-mode</span>
+  <span class="nb">:hostmode</span> <span class="ss">&#39;pm-host/markdown</span>
+  <span class="nb">:innermodes</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">poly-markdown-yaml-metadata-innermode</span>
+		<span class="nv">poly-markdown-fenced-code-innermode</span><span class="p">)</span>
+  <span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>define-polymode</code> 跟标准EMACS工具集 <code>define-derived-mode</code> 和
+<code>define-minor-mode</code> 相同.它接受一些可选参数:</p>
+<ul>
+<li><code>PARENT</code> polymode可以被划分</li>
+<li>在chunkmodes安装期间, <code>DOC</code> string and <code>BODY</code> 在host和indirect
+buffer中被执行</li>
+<li>可以在 <code>BODY</code> 前添加键值进一步完善配置,</li>
+<li>到目前为止,大多数 common keys 是 <code>:hostmode</code> 指定
+<code>pm-host-chunkmode</code> 对象的名字(symbol),以及 <code>:innermode</code>,即
+<code>pm-inner-chunkmode</code> 对象的列表名.详情参见 <code>define-polymode</code>.</li>
+</ul>
+<p>大多数 polymodes 被设计用作major mode.(i.e. in <code>auto-mode-alist</code>
+or buffer-local <code>mode:</code> cookie).</p>
+<p>很遗憾,不知道如何使用.暂时搁置.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>MMM: Multiple Major Mode <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Revolt</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        Sun Jun 14 2020
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/revolt/post/even/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Theme preview</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/revolt/post/init-emacs-regular-expression/">
+            <span class="next-text nav-default">Emacs Regular Expression</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://lovemoganna.github.io/revolt/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Revolt</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/revolt/dist/even.bd00e4ee.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

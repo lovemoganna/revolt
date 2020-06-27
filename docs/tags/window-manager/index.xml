@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>window-manager on Revolt&#39;s NoteBook</title>
+    <link>https://lovemoganna.github.io/revolt/tags/window-manager/</link>
+    <description>Recent content in window-manager on Revolt&#39;s NoteBook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 18 Mar 2020 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://lovemoganna.github.io/revolt/tags/window-manager/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>stumpwm</title>
+      <link>https://lovemoganna.github.io/revolt/post/stumpwm/</link>
+      <pubDate>Wed, 18 Mar 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/stumpwm/</guid>
+      <description>&lt;p&gt;Stumpwm - happy hacking tools.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

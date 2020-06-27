@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Unix power tools - Revolt&#39;s NoteBook</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Revolt" /><meta name="description" content="Unix is not an operating system as much as it is a way of thinking.
+" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with theme even" />
+
+
+<link rel="canonical" href="https://lovemoganna.github.io/revolt/post/init-unix-power-tools/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/revolt/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/revolt/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/revolt/favicon-16x16.png">
+<link rel="manifest" href="/revolt/manifest.json">
+<link rel="mask-icon" href="/revolt/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/revolt/dist/even.27d242e6.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Unix power tools" />
+<meta property="og:description" content="Unix is not an operating system as much as it is a way of thinking." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lovemoganna.github.io/revolt/post/init-unix-power-tools/" />
+<meta property="article:published_time" content="2020-05-19T00:00:00+08:00" />
+<meta property="article:modified_time" content="2020-05-24T16:19:04+08:00" /><meta property="og:locale" content="en_US" />
+<meta itemprop="name" content="Unix power tools">
+<meta itemprop="description" content="Unix is not an operating system as much as it is a way of thinking.">
+<meta itemprop="datePublished" content="2020-05-19T00:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2020-05-24T16:19:04&#43;08:00" />
+<meta itemprop="wordCount" content="2016">
+
+
+
+<meta itemprop="keywords" content="linux-command," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Unix power tools"/>
+<meta name="twitter:description" content="Unix is not an operating system as much as it is a way of thinking."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/revolt/" class="logo">Revolt</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/revolt/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/revolt/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/revolt/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/revolt/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/revolt/" class="logo">Revolt</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/revolt/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/revolt/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/revolt/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/revolt/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Unix power tools</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> Tue May 19 2020 </span>
+        <div class="post-category">
+            <a href="/revolt/categories/linux-command/"> linux-command </a>
+            </div>
+          <span class="more-meta"> 2016 words </span>
+          <span class="more-meta"> 5 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#shell">Shell</a>
+      <ul>
+        <li><a href="#check-which-kinds-of-you-running-shell">Check which kinds of you running shell</a></li>
+        <li><a href="#internal-and-external-commands">Internal and External Commands</a></li>
+        <li><a href="#the-kernel-and-daemons">The kernel and Daemons</a></li>
+        <li><a href="#filenames">Filenames</a></li>
+        <li><a href="#filename-extensions">Filename Extensions</a></li>
+        <li><a href="#wildcards">Wildcards</a></li>
+      </ul>
+    </li>
+    <li><a href="#hacking-on-characters-with-tr">Hacking on Characters with tr</a>
+      <ul>
+        <li><a href="#convert-all-uppercase-characters-in-file-to-the-equivalent">Convert all uppercase characters in file to the equivalent</a></li>
+        <li><a href="#a-frequent-trick-convert-filenames-from-all-uppercase-to-all">a frequent trick: convert filenames from all uppercase to all</a></li>
+        <li><a href="#apply-this-feature-to-an-entire-branch-of-a-file-system">apply this feature to an entire branch of a file system</a></li>
+        <li><a href="#test-your-shell-version">test your shell version</a></li>
+      </ul>
+    </li>
+    <li><a href="#filtering-text-through-a-unix-command"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> Filtering Text Through a Unix command</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>Unix is not an operating system as much as it is a way of thinking.</p>
+<p>It is the idea that the power of a system comes more from the
+relationships among programs than from the programs themseleves.</p>
+<p>No single program,however well thought out,will solve every problem.</p>
+<p>many situation that runs counter(相反) to the expected.</p>
+<p>Faced with a choice between an hour spent on a boring,repetitive task
+and an hour putting together a tool that will do the task in a flash?</p>
+<p>One key concept is that programs are tools.</p>
+<h2 id="shell">Shell</h2>
+<h3 id="check-which-kinds-of-you-running-shell">Check which kinds of you running shell</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">grep revolt /etc/passwd
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-tcsh" data-lang="tcsh">grep revolt /etc/passwd
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>Sun&rsquo;s Network Information Service?</p>
+</li>
+<li>
+<p>NetInfo: store <code>/etc/passwd</code> location.</p>
+</li>
+<li>
+<p>generate mac file</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">hello mac file
+</code></pre></td></tr></table>
+</div>
+</div><p>2.convert mac file to unix file</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">tr <span class="s1">&#39;\015&#39;</span> <span class="s1">&#39;\012&#39;</span> convert.mac convert.unix
+</code></pre></td></tr></table>
+</div>
+</div><p>3.we will use more kinds of shell,for example, C shell.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">ysy -S tcsh
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="internal-and-external-commands">Internal and External Commands</h3>
+<p>for example:</p>
+<ul>
+<li>built-in: <em>cd</em> command</li>
+<li>external: /bin/ls <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
+</ul>
+<p>The shell doesn&rsquo;t start a separate process to run internal
+commands.External commands require the shell to <em>fork</em> and <code>exec</code>
+a new <strong><strong>subprocess</strong></strong>. this takes some time, especially on a <a href="https://baike.baidu.com/item/%25E7%25B3%25BB%25E7%25BB%259F%25E6%2580%25BB%25E7%25BA%25BF">Busy System</a>.</p>
+<p>When you type the name of a command:</p>
+<ul>
+<li>Shell first checks to see it is or not built-in command.
+<ul>
+<li>if so, execute it.</li>
+<li>if the command name is an absolute pathname.begining with
+<code>/</code>.the command is likewise executed.</li>
+<li>if the command is neither built-in nor specified with an
+absoulute pathname,most shells will check for <strong><strong>aliaes</strong></strong> or
+<strong><strong>shell functions</strong></strong>.which may have been defined by the user &ndash;
+often in a <strong><strong>shell setup file</strong></strong> that was read then the shell started.</li>
+<li>Most shells also &ldquo;remember&rdquo; the location of external command.</li>
+</ul>
+</li>
+</ul>
+<p>The search path isn&rsquo;t built into the shell; it&rsquo;s something you
+specify in your shell setup files.</p>
+<p>By tradition, Unix system programs are kept in directories called
+<code>/bin/</code> and <code>/usr/bin/</code>, with additinal programs usually used only
+by system administrators in either <code>/etc/</code> and <code>/usr/etc/</code> or
+<code>/sbin</code> and <code>/usr/sbin/</code>. Many versions of Unix also have programs
+stored in <code>/usr/ucb/</code> (the mean is University of California at
+Berkeley).</p>
+<p>There may be other directories containing programs.For Example:</p>
+<dl>
+<dt>X Window System</dt>
+<dd><ol>
+<li>stored path: <code>/usr/bin/X11</code></li>
+</ol>
+</dd>
+<dt>user own directories</dt>
+<dd><ol>
+<li><code>/usr/local/bin</code> or <code>/opt/</code></li>
+</ol>
+</dd>
+</dl>
+<p>The Search Path is stored in an <strong><strong>environment variable</strong></strong> called
+<code>PATH</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">echo</span> <span class="nv">$PATH</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The path is searched in order.your <code>local</code> command we mentioned
+earlier will be executed.</p>
+<h3 id="the-kernel-and-daemons">The kernel and Daemons</h3>
+<p>Unix is always will be a multiuser operating system.This reflected
+in the latter a few ways.</p>
+<ul>
+<li>just only person using it.</li>
+<li>it is running on a PC with a single keyboard.</li>
+</ul>
+<p>Unix is always doing things &ldquo;behind your back&rdquo; (背后做事),running
+programms of its own,whether you are aware of it or not. The most
+important of these programs, the <strong><strong>kernel</strong></strong>,is the heart of the
+Unix operating system itself.</p>
+<p>The kernel assings memory to each of the programs that are
+running,partition time(时间分割) fairly so that each program can
+get its job done, handles all I/O (input/output) operations, and
+so on.</p>
+<p>Another important group of programs,called <code>daemons</code>,are the
+system&rsquo;s hyplers. They run continuously(连续不断的) &ndash; or form
+time to time &ndash; performing small but important tasks like handling
+mail, running network communications, feeding data to your
+printer,keeping track of the time,and so on.</p>
+<p>Not only are your sharing the computing with the kernel and some
+mysterious daemons, you&rsquo;re also sharing it with yourself.</p>
+<p>You can issue the <code>ps x</code> command to get a list of all processes
+running on your system. For example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">ps x
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">  PID TTY      STAT   TIME COMMAND
+  651 ?        Ss     0:00 /usr/lib/systemd/systemd --user
+  652 ?        S      0:00 (sd-pam)
+  661 ?        S      0:00 /usr/bin/kwalletd5 --pam-login 7 3
+  662 ?        Sl    14:11 /usr/bin/stumpwm
+  670 ?        Ss     0:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+  673 ?        Sl     0:11 fcitx
+  683 ?        Ss     0:00 /usr/bin/dbus-daemon --syslog --fork --print-pid 4 --print-address 6 --config-file /usr/share/fcitx/dbus/daemon.conf
+  687 ?        SN     0:00 /usr/bin/fcitx-dbus-watcher unix:abstract=/tmp/dbus-8tyfTxJD0k,guid=fecdd2284141e57d98b17e8e5ec8d7cd 683
+  695 ?        Sl     3:19 qv2ray
+  751 ?        Sl     0:00 /usr/lib/dconf-service
+ 2930 ?        Sl     1:52 /usr/lib/v2ray/v2ray -config /home/revolt/.config/qv2ray/generated/config.gen.json
+ 2979 ?        Sl    19:57 /usr/lib/firefox/firefox
+ 2998 ?        Ssl    0:00 /usr/lib/gvfsd
+ 3004 ?        Sl     0:00 /usr/lib/gvfsd-fuse /run/user/1000/gvfs -f
+ 3069 ?        Ssl    0:00 /usr/lib/at-spi-bus-launcher
+ 3099 ?        Sl     0:19 /usr/lib/firefox/firefox -contentproc -childID 1 -isForBrowser -prefsLen 1 -prefMapSize 220399 -parentBuildID 20200509015111 -appdir /usr/lib/firefox/browser 2979 true tab
+ 3144 ?        S      0:15 xterm
+ 3155 pts/0    Ss     0:00 zsh
+ 3197 ?        S&lt;sl   0:18 /usr/bin/pulseaudio --daemonize=no
+ 3264 ?        Sl     0:00 /usr/lib/pulse/gsettings-helper
+ 3272 ?        Sl     2:33 /usr/lib/firefox/firefox -contentproc -childID 3 -isForBrowser -prefsLen 6442 -prefMapSize 220399 -parentBuildID 20200509015111 -appdir /usr/lib/firefox/browser 2979 true tab
+ 3375 ?        Sl     0:01 /usr/bin/plasma-browser-integration-host /usr/lib/mozilla/native-messaging-hosts/org.kde.plasma.browser_integration.json plasma-browser-integration@kde.org
+ 3397 ?        Sl     9:22 /usr/lib/firefox/firefox -contentproc -childID 5 -isForBrowser -prefsLen 7248 -prefMapSize 220399 -parentBuildID 20200509015111 -appdir /usr/lib/firefox/browser 2979 true tab
+ 3450 ?        SLl    0:03 /usr/lib/kdeconnectd
+ 3640 pts/0    Sl+    1:15 emacs -nw
+ 3810 ?        S      0:01 xterm
+ 3813 pts/1    Ss+    0:13 zsh
+ 4506 ?        Sl     2:11 /usr/lib/firefox/firefox -contentproc -childID 8 -isForBrowser -prefsLen 12156 -prefMapSize 220399 -parentBuildID 20200509015111 -appdir /usr/lib/firefox/browser 2979 true tab
+ 4770 ?        Sl     0:27 /usr/lib/firefox/firefox -contentproc -childID 10 -isForBrowser -prefsLen 12157 -prefMapSize 220399 -parentBuildID 20200509015111 -appdir /usr/lib/firefox/browser 2979 true tab
+ 5420 ?        S      0:00 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+ 5427 ?        Sl     0:01 /usr/lib/at-spi2-registryd --use-gnome-session
+22173 pts/1    Sl     1:27 ./firefox.real --class Tor Browser -profile TorBrowser/Data/Browser/profile.default
+22245 pts/1    S      0:07 /home/revolt/tor-browser_en-US/Browser/TorBrowser/Tor/tor --defaults-torrc /home/revolt/tor-browser_en-US/Browser/TorBrowser/Data/Tor/torrc-defaults -f /home/revolt/tor-browser_en-US/Browser/TorBrowser/Data/Tor/torrc DataDirectory /home/revolt/tor-browser_en-US/Browser/TorBrowser/Data/Tor GeoIPFile /home/revolt/tor-browser_en-US/Browser/TorBrowser/Data/Tor/geoip GeoIPv6File /home/revolt/tor-browser_en-US/Browser/TorBrowser/Data/Tor/geoip6 HashedControlPassword 16:f4f85b31fe5b244d60be58a90b4dda505cd40e94d19b874ee206563bd8 +__ControlPort 9151 +__SocksPort 127.0.0.1:9150 IPv6Traffic PreferIPv6 KeepAliveIsolateSOCKSAuth __OwningControllerProcess 22173
+22355 pts/1    Sl     0:02 ./TorBrowser/Tor/PluggableTransports/obfs4proxy
+22435 pts/1    Sl     0:16 /home/revolt/tor-browser_en-US/Browser/firefox.real -contentproc -childID 2 -isForBrowser -prefsLen 899 -prefMapSize 223657 -parentBuildID 20200402110101 -greomni /home/revolt/tor-browser_en-US/Browser/omni.ja -appomni /home/revolt/tor-browser_en-US/Browser/browser/omni.ja -appdir /home/revolt/tor-browser_en-US/Browser/browser 22173 tab
+22503 pts/1    Sl     1:55 /home/revolt/tor-browser_en-US/Browser/firefox.real -contentproc -childID 3 -isForBrowser -prefsLen 899 -prefMapSize 223657 -parentBuildID 20200402110101 -greomni /home/revolt/tor-browser_en-US/Browser/omni.ja -appomni /home/revolt/tor-browser_en-US/Browser/browser/omni.ja -appdir /home/revolt/tor-browser_en-US/Browser/browser 22173 tab
+22747 pts/1    Sl     1:28 /home/revolt/tor-browser_en-US/Browser/firefox.real -contentproc -childID 4 -isForBrowser -prefsLen 1925 -prefMapSize 223657 -parentBuildID 20200402110101 -greomni /home/revolt/tor-browser_en-US/Browser/omni.ja -appomni /home/revolt/tor-browser_en-US/Browser/browser/omni.ja -appdir /home/revolt/tor-browser_en-US/Browser/browser 22173 tab
+23049 pts/1    Sl     0:00 /home/revolt/tor-browser_en-US/Browser/firefox.real -contentproc -childID 5 -isForBrowser -prefsLen 1993 -prefMapSize 223657 -parentBuildID 20200402110101 -greomni /home/revolt/tor-browser_en-US/Browser/omni.ja -appomni /home/revolt/tor-browser_en-US/Browser/browser/omni.ja -appdir /home/revolt/tor-browser_en-US/Browser/browser 22173 tab
+28482 ?        Sl     2:33 /usr/lib/firefox/firefox -contentproc -childID 14 -isForBrowser -prefsLen 12634 -prefMapSize 220399 -parentBuildID 20200509015111 -appdir /usr/lib/firefox/browser 2979 true tab
+33788 ?        Sl    19:31 /usr/lib/firefox/firefox -contentproc -childID 15 -isForBrowser -prefsLen 12702 -prefMapSize 220399 -parentBuildID 20200509015111 -appdir /usr/lib/firefox/browser 2979 true tab
+56044 ?        Sl     1:19 /usr/lib/firefox/firefox -contentproc -parentBuildID 20200509015111 -prefsLen 14377 -prefMapSize 220399 -appdir /usr/lib/firefox/browser 2979 true rdd
+58844 ?        Ss     0:00 /usr/bin/zsh
+58845 ?        R      0:00 ps x
+</code></pre></td></tr></table>
+</div>
+</div><p>User logged into his <strong><strong>console</strong></strong>, which shows as <em>tty?</em> in the TTY
+column,many program running here, including the X Window System.</p>
+<p>if you want to see everything that&rsquo;s running,including the
+daemons,type the command <code>ps aux</code> or <code>ps -el</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">ps aux
+</code></pre></td></tr></table>
+</div>
+</div><p>Because there is so much going on at once,The Unix kernel mediates
+different demands for time,memory,disks,and so on.</p>
+<p>Not only does the kernel need to run your programs, but it also
+needs to run the daemons,any programs that other users might want
+to start, or any programs that you may have scheduled to run
+automatically.</p>
+<p>The Unix kernel never takes a vacation: it is always watching over
+the ststem.</p>
+<p>The Kernel is a manager that schedules many different kinds of
+activity, you understand a lot about how Unix works.</p>
+<p>you should know that it&rsquo;s bad idea to turn the computer off while
+it is writing something to disk. You will probably destory the
+disk, and you clould conceivably damage the disk drive.The same is
+true is for Unix.</p>
+<p>Any of the programs that are running can start doing something to
+the disk at any time.One of the daemons makes a point of accessing
+the disk drive every 30 seconds or so, just to stay in touch(保持
+联系). Therefore, you can&rsquo;t just run a Unix computer off.</p>
+<p>You might do all sorts of damage to the system&rsquo;s files. To turn a
+Unix system off, you must first run <code>shutdown</code>,which kicks
+everyone off the system, makes sure the a deamons won&rsquo;t try to
+play with disk drive then you aren&rsquo;t looking,and runs <code>sync</code> to
+make sure that the disks have the latest version of everything.</p>
+<p>When you start up a Unix system,it automatically runs <code>fsck</code>,which
+stands for <code>filesystem check</code>; its job is to find out if you shut
+down the system correctly and try to fix any damage that might
+have happened if you didn&rsquo;t.</p>
+<h3 id="filenames">Filenames</h3>
+<ul>
+<li>
+<p>Upper -and lowercase characters</p>
+<p>Unix filenames are always case senstive.</p>
+</li>
+<li>
+<p>Underscores(_)</p>
+<p>make filename more readable.</p>
+</li>
+<li>
+<p>Periods(.)</p>
+<ol>
+<li>
+<p>filename extensions.</p>
+</li>
+<li>
+<p>Filenames that begin with a period are treated specially by
+the shell: wildcards won&rsquo;t match them unless you include the
+period (like .*). The ls command,which lists your file,ignore
+files whose begin with a period unless you give it a special
+option.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">ls -a
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+</li>
+<li>
+<p>Certains other punctuation.</p>
+<p>comma(,) , is safe.</p>
+</li>
+<li>
+<p>Some things to be aware of:</p>
+<p>1.Unix dose not have any concept of a file version.
+2.Once you delete a file in Unix, it is <strong><strong>gone forever</strong></strong>.You
+can&rsquo;t get it back without restoring it from a backup.May be you
+should have a &ldquo;grace period&rdquo;.</p>
+</li>
+</ul>
+<h3 id="filename-extensions">Filename Extensions</h3>
+<p>Filename extensions for user&rsquo;s benefit:</p>
+<table>
+<thead>
+<tr>
+<th>Extension</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.tar</td>
+<td><code>tar</code> archive</td>
+</tr>
+<tr>
+<td>.tar.gz or .tgz</td>
+<td><code>gzip</code> ped tar archive</td>
+</tr>
+<tr>
+<td>.shar</td>
+<td>Shell archive</td>
+</tr>
+<tr>
+<td>.sh</td>
+<td>Bournel shell script</td>
+</tr>
+<tr>
+<td>.csh</td>
+<td>C Shell script</td>
+</tr>
+<tr>
+<td>.mm</td>
+<td>Text file containing troffs mm macros</td>
+</tr>
+<tr>
+<td>.ms</td>
+<td>Text file containing troffs ms macros</td>
+</tr>
+<tr>
+<td>.ps</td>
+<td>PostScript source file</td>
+</tr>
+</tbody>
+</table>
+<h3 id="wildcards">Wildcards</h3>
+<p>The shells provide a number of wildcards that you can use to
+abbreviate filenames or refer to groups of files.</p>
+<p>For example,let&rsquo;s say you want to delete all filenames ending in
+<code>/.txt</code> in the current directory.</p>
+<p>The wildcard is the &ldquo;regardless&rdquo; part. Like a wildcard in a poker
+game,a wildcard in a filename can have any value.</p>
+<p>When <code>?</code> appears in a filename, the <code>?</code> matches any single
+character.For example, <code>letter?</code> refers to any filename that
+begins with letter and has exactly one character after that.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">ls -a ./demo-1 <span class="p">|</span> egrep <span class="s2">&#34;^aa?&#34;</span>	<span class="c1"># ? 匹配带有 0 个 / 1 个 带 a 的文件名</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="hacking-on-characters-with-tr">Hacking on Characters with tr</h2>
+<p>The tr command is a character translation filter,reading standard
+input and either deleting specific charaters or substituting one
+character for another.</p>
+<p>A string of consecutive ASCII characters can be represented as a
+hyphen-separated range.</p>
+<h3 id="convert-all-uppercase-characters-in-file-to-the-equivalent">Convert all uppercase characters in file to the equivalent</h3>
+<p>lowercase characters.</p>
+<ol>
+<li>
+<p>now generate file as text demo.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">echo</span> <span class="s2">&#34;A b C D e f g&#34;</span> &gt;&gt; a.txt
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>check generate file.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">bat a.txt
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>convert all uppercase character to lowercase character in
+generate files.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">tr <span class="s1">&#39;A-Z&#39;</span> <span class="s1">&#39;a-z&#39;</span> &lt; a.txt
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="a-frequent-trick-convert-filenames-from-all-uppercase-to-all">a frequent trick: convert filenames from all uppercase to all</h3>
+<p>lowercase.</p>
+<ol>
+<li>
+<p>show current all files.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="k">for</span> i in <span class="sb">`</span>ls<span class="sb">`</span><span class="p">;</span>
+<span class="k">do</span> <span class="nb">echo</span> <span class="nv">$i</span><span class="p">;</span>
+<span class="k">done</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>generate new uppercase filename file.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">touch C.txt D.txt
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>convert filename</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="k">for</span> i in <span class="sb">`</span>ls<span class="sb">`</span><span class="p">;</span>
+<span class="c1"># mv -i          prompt before overwriteing</span>
+<span class="k">do</span> mv -i <span class="nv">$i</span> <span class="sb">`</span><span class="nb">echo</span> <span class="nv">$i</span> <span class="p">|</span> tr <span class="s1">&#39;A-Z&#39;</span> <span class="s1">&#39;a-z&#39;</span><span class="sb">`</span><span class="p">;</span>
+<span class="k">done</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="apply-this-feature-to-an-entire-branch-of-a-file-system">apply this feature to an entire branch of a file system</h3>
+<ol>
+<li>
+<p>use `find` command do some damage.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">find ./ -exec ./lowercase.sh <span class="o">{}</span> <span class="se">\;</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">find ./ <span class="o">&amp;&amp;</span> ./lowercase.sh
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">find ./ -exec ./lowercase.sh <span class="o">{}</span> +
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>slove find missing argument `exec` question</p>
+<p><a href="https://stackoverflow.com/questions/2961673/find-missing-argument-to-exec">https://stackoverflow.com/questions/2961673/find-missing-argument-to-exec</a></p>
+</li>
+</ol>
+<h3 id="test-your-shell-version">test your shell version</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">echo</span> <span class="s1">&#39;[]&#39;</span> <span class="p">|</span> tr <span class="s1">&#39;[a-z]&#39;</span> A
+</code></pre></td></tr></table>
+</div>
+</div><p>now you use bash version is Berkeley version, cause Berkeley
+version also converts the input `[]` to A characters because `[]`
+aren&rsquo;t treated as range operactors.</p>
+<h2 id="filtering-text-through-a-unix-command"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> Filtering Text Through a Unix command</h2>
+<p>When you&rsquo;re editing in vi,you can send a block of text as standard
+input to a Unix command. <strong><strong>The output form this command replaces
+the block of text in the buffer.</strong></strong></p>
+<dl>
+<dt>vi</dt>
+<dd>movement keystrokes</dd>
+</dl>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>external program stored in the dir <code>/bin</code>. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Revolt</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        Sun May 24 2020
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/revolt/tags/linux-command/">linux-command</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/revolt/post/unix-power-tools/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Shell</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/revolt/post/basic2/">
+            <span class="next-text nav-default">Elisp Basic</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://lovemoganna.github.io/revolt/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Revolt</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/revolt/dist/even.bd00e4ee.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

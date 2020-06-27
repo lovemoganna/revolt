@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Emacs on Revolt&#39;s NoteBook</title>
+    <link>https://lovemoganna.github.io/revolt/categories/emacs/</link>
+    <description>Recent content in Emacs on Revolt&#39;s NoteBook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 26 May 2020 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://lovemoganna.github.io/revolt/categories/emacs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Org Mode Table</title>
+      <link>https://lovemoganna.github.io/revolt/post/org-table/</link>
+      <pubDate>Tue, 26 May 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/org-table/</guid>
+      <description>&lt;p&gt;Org as a spreadsheet system,just for test my poor salary&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Eshell as a main shell</title>
+      <link>https://lovemoganna.github.io/revolt/post/eshell/</link>
+      <pubDate>Tue, 17 Mar 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/eshell/</guid>
+      <description>&lt;p&gt;这篇文章翻译自Reddit.一个充满神奇的地方。原文出自
+&lt;a href=&#34;https://www.reddit.com/r/emacs/comments/6y3q4k/yes%5Feshell%5Fis%5Fmy%5Fmain%5Fshell/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Org Mode</title>
+      <link>https://lovemoganna.github.io/revolt/post/org-mode/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/org-mode/</guid>
+      <description>&lt;p&gt;Org can edit, format, extract, export, and publish source code blocks.&lt;/p&gt;
+&lt;p&gt;Org can also compile and execute a source code block, then capture the results.&lt;/p&gt;
+&lt;p&gt;Users can control how live they want each source code block by
+tweaking the header arguments (see Using Header Arguments) for
+compiling, execution, extraction, and exporting.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

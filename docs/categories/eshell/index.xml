@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eshell on Revolt&#39;s NoteBook</title>
+    <link>https://lovemoganna.github.io/revolt/categories/eshell/</link>
+    <description>Recent content in Eshell on Revolt&#39;s NoteBook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 17 Mar 2020 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://lovemoganna.github.io/revolt/categories/eshell/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Eshell as a main shell</title>
+      <link>https://lovemoganna.github.io/revolt/post/eshell/</link>
+      <pubDate>Tue, 17 Mar 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/eshell/</guid>
+      <description>&lt;p&gt;这篇文章翻译自Reddit.一个充满神奇的地方。原文出自
+&lt;a href=&#34;https://www.reddit.com/r/emacs/comments/6y3q4k/yes%5Feshell%5Fis%5Fmy%5Fmain%5Fshell/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

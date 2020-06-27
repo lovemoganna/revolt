@@ -1,0 +1,26 @@
+#+-*-mode: org;-*-
+#+creator: Emacs 28.0.50 (Org mode 9.3 + ox-hugo)
+#+hugo_with_locale: en
+#+hugo_front_matter_format: toml
+#+hugo_level_offset: 1
+#+hugo_delete_trailing_ws:
+#+hugo_section: hearts
+#+hugo_bundle:
+#+hugo_base_dir: ../../
+#+date: <2020-06-27 Sat>
+#+hugo_tags: 
+#+hugo_categories: 
+#+title: Emacs AUCTex Yasnippet
+
+** LaTex resources
+
+
+找到一个LaTex 中文参考，以后有机会看下。
+
+git repository
+
+https://github.com/wx672/texmf.git
+
+video tutorial
+
+https://www.youtube.com/watch?v=UjprbZl_m6Y&feature=youtu.be

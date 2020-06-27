@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Org Mode - Revolt&#39;s NoteBook</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Revolt" /><meta name="description" content="Org can edit, format, extract, export, and publish source code blocks.
+Org can also compile and execute a source code block, then capture the results.
+Users can control how live they want each source code block by tweaking the header arguments (see Using Header Arguments) for compiling, execution, extraction, and exporting.
+" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with theme even" />
+
+
+<link rel="canonical" href="https://lovemoganna.github.io/revolt/post/org-mode/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/revolt/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/revolt/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/revolt/favicon-16x16.png">
+<link rel="manifest" href="/revolt/manifest.json">
+<link rel="mask-icon" href="/revolt/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/revolt/dist/even.27d242e6.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Org Mode" />
+<meta property="og:description" content="Org can edit, format, extract, export, and publish source code blocks.
+Org can also compile and execute a source code block, then capture the results.
+Users can control how live they want each source code block by
+tweaking the header arguments (see Using Header Arguments) for
+compiling, execution, extraction, and exporting." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lovemoganna.github.io/revolt/post/org-mode/" />
+<meta property="article:published_time" content="2020-02-24T00:00:00+08:00" />
+<meta property="article:modified_time" content="2020-05-26T10:51:17+08:00" />
+<meta itemprop="name" content="Org Mode">
+<meta itemprop="description" content="Org can edit, format, extract, export, and publish source code blocks.
+Org can also compile and execute a source code block, then capture the results.
+Users can control how live they want each source code block by
+tweaking the header arguments (see Using Header Arguments) for
+compiling, execution, extraction, and exporting.">
+<meta itemprop="datePublished" content="2020-02-24T00:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2020-05-26T10:51:17&#43;08:00" />
+<meta itemprop="wordCount" content="1810">
+
+
+
+<meta itemprop="keywords" content="emacs,orgmode," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Org Mode"/>
+<meta name="twitter:description" content="Org can edit, format, extract, export, and publish source code blocks.
+Org can also compile and execute a source code block, then capture the results.
+Users can control how live they want each source code block by
+tweaking the header arguments (see Using Header Arguments) for
+compiling, execution, extraction, and exporting."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/revolt/" class="logo">Revolt</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/revolt/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/revolt/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/revolt/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/revolt/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/revolt/" class="logo">Revolt</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/revolt/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/revolt/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/revolt/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/revolt/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Org Mode</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> Mon Feb 24 2020 </span>
+        <div class="post-category">
+            <a href="/revolt/categories/emacs/"> emacs </a>
+            <a href="/revolt/categories/orgmode/"> orgmode </a>
+            </div>
+          <span class="more-meta"> 1810 words </span>
+          <span class="more-meta"> 4 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#structure-of-code-blocks">Structure of Code Blocks</a></li>
+    <li><a href="#literal-examples">Literal Examples</a></li>
+    <li><a href="#using-header-arguments">Using Header Arguments</a>
+      <ul>
+        <li><a href="#system-wide-header-arguments">System-wide header arguments</a></li>
+        <li><a href="#header-arguments-in-org-mode-properties">Header arguments in Org mode properties</a></li>
+        <li><a href="#code-block-specific-header-arguments">Code block specific header arguments</a></li>
+        <li><a href="#header-arguments-in-function-calls"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> Header arguments in function calls</a></li>
+      </ul>
+    </li>
+    <li><a href="#extracting-source-code">Extracting Source Code</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>Org can edit, format, extract, export, and publish source code blocks.</p>
+<p>Org can also compile and execute a source code block, then capture the results.</p>
+<p>Users can control how live they want each source code block by
+tweaking the header arguments (see Using Header Arguments) for
+compiling, execution, extraction, and exporting.</p>
+<p>Org can also link a compiler error message to the appropriate line
+in the source code block.</p>
+<p>An important feature of Org’s management of source code blocks is the
+ability to pass variables, functions, and results to one another using
+a common syntax for source code blocks in any language.</p>
+<h2 id="structure-of-code-blocks">Structure of Code Blocks</h2>
+<p>A source code block conforms to this structure:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">#+NAME: &lt;name&gt;
+#+BEGIN_SRC &lt;language&gt; &lt;switches&gt; &lt;header arguments&gt;
+  &lt;body&gt;
+#+END_SRC
+</code></pre></td></tr></table>
+</div>
+</div><p>An inline code block conforms to this structure:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">src_&lt;language&gt;{&lt;body&gt;}
+</code></pre></td></tr></table>
+</div>
+</div><p>or</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">src_&lt;language&gt;[&lt;header arguments&gt;]{&lt;body&gt;}
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p><code>‘#+NAME: &lt;name&gt;’</code></p>
+<p>Org mode requires unique names. For duplicate names, Org mode’s
+behavior is undefined.</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p><code>‘&lt;switches&gt;’</code></p>
+<p>Switches provide finer control of the code execution, export, and
+format. see <a href="#literal-examples">Literal Examples</a></p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p><code>'&lt;header arguments&gt;'</code></p>
+<p>Heading arguments control many aspects of evaluation, export and
+tangling of code blocks.Using Org’s properties feature, header
+arguments can be selectively applied to the entire buffer or
+specific sub-trees of the Org document.</p>
+</li>
+</ul>
+<h2 id="literal-examples">Literal Examples</h2>
+<p>1.特殊符号，防止歧义。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">* I am no real headline
+</code></pre></td></tr></table>
+</div>
+</div><p>Here is an example</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">Some example from a text file.
+</code></pre></td></tr></table>
+</div>
+</div><p>2.显示行号</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="c1">;; This exports with line number 20.</span>
+<span class="p">(</span><span class="nf">message</span> <span class="s">&#34;This is line 21&#34;</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="c1">;; This is listed as line 31.</span>
+<span class="p">(</span><span class="nf">message</span> <span class="s">&#34;This is line 32&#34;</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>3.定位到代码位置（在导出的HTML里面生效）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nb">save-excursion</span>
+				<span class="p">(</span><span class="nf">goto-char</span> <span class="p">(</span><span class="nf">point-min</span><span class="p">))</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>In line 1 we remember the current position. Line 2
+jumps to point-min.</p>
+<p>4.when exporting the contents of the block. However, you can use
+the ‘-i’ switch to also preserve the global indentation, if it does
+matter. See Editing Source Code。缩进的设置。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nf">message</span> <span class="s">&#34;This is line 32&#34;</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="using-header-arguments">Using Header Arguments</h2>
+<p>Since header arguments can be set in several ways, Org prioritizes
+them in case of overlaps or conflicts by giving local settings a
+higher priority.</p>
+<p>Header values in function calls, for example, override header
+values from global defaults.</p>
+<h3 id="system-wide-header-arguments">System-wide header arguments</h3>
+<p>System-wide values of header arguments can be specified by
+customizing the org-babel-default-header-args variable, which
+defaults to the following values:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">    :session    =&gt; &#34;none&#34;
+    :results    =&gt; &#34;replace&#34;
+    :exports    =&gt; &#34;code&#34;
+    :cache      =&gt; &#34;no&#34;
+    :noweb      =&gt; &#34;no&#34;</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="header-arguments-in-org-mode-properties">Header arguments in Org mode properties</h3>
+<p><code>#+PROPERTY: header-args:Emacs-lisp  :session *Emacs-lisp*</code></p>
+<p>For header arguments applicable to the buffer, use ‘PROPERTY’
+keyword anywhere in the Org file</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nf">message</span> <span class="p">(</span><span class="nf">number-to-string</span> <span class="nv">a</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">1
+</code></pre></td></tr></table>
+</div>
+</div><p><em>now here is a test demo</em>:</p>
+<p><code>(message (number-to-string 1))</code> <code>1</code></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-http" data-lang="http"><span class="err">GET http://date.jsontest.com
+</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Content-Type: application/json
+X-Cloud-Trace-Context: 6651d80a2a9aedface50a6a8634d1112
+Date: Sat, 14 Mar 2020 17:12:21 GMT
+Server: Google Frontend
+Content-Length: 100
+
+{
+   &#34;date&#34;: &#34;03-14-2020&#34;,
+   &#34;milliseconds_since_epoch&#34;: 1584205941375,
+   &#34;time&#34;: &#34;05:12:21 PM&#34;
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>now call the <code>get_date</code> function,the following of the result:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">{
+   &#34;date&#34;: &#34;03-14-2020&#34;,
+   &#34;milliseconds_since_epoch&#34;: 1584206033817,
+   &#34;time&#34;: &#34;05:13:53 PM&#34;
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>inline block multi problem,now it is:</p>
+<p>Inline source code is only supposed to create one-line results. If
+you write code that generates multiple result lines, an error is
+raised: Inline error: multiline result cannot be used</p>
+<p><code>src_emacs-lisp[:results value]{(princ &quot;hha\nyesyesyes&quot;)}</code></p>
+<p><code>(princ &quot;hha&quot;)</code> <code>hha</code></p>
+<p>you could run it and test it.</p>
+<h3 id="code-block-specific-header-arguments">Code block specific header arguments</h3>
+<p>Multi-line header arguments on an unnamed code block:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nf">message</span> <span class="s">&#34;data1:%S, data2:%S&#34;</span> <span class="nv">data1</span> <span class="nv">data2</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Multi-line header arguments on a named code block:</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nf">message</span> <span class="s">&#34;data:%S&#34;</span> <span class="nv">data</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="header-arguments-in-function-calls"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> Header arguments in function calls</h3>
+<p>Header arguments in function calls are the most specific and
+override all other settings in case of an overlap.</p>
+<p>They get the highest priority. Two ‘#+CALL:’ examples are shown
+below.</p>
+<p>;#+CALL: name-block(data=3) :exports results</p>
+<p>;#+CALL: name-block<a href="data=5">:session special</a></p>
+<h4 id="evaluating-code-blocks">Evaluating Code Blocks</h4>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Code Evaluation and Security Issues</p>
+<p>just set the variable <code>org-confirm-babel-evaluate</code> nil, org
+executes code blocks without prompting the user for
+confirmation.</p>
+<p>Each source code language can be handled separately through this
+function argument.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">(defun my-org-confirm-babel-evaluate (lang body)
+  (not (string= lang &#34;ditaa&#34;)))  ;don&#39;t ask for ditaa
+(setq org-confirm-babel-evaluate #&#39;my-org-confirm-babel-evaluate)
+</code></pre></td></tr></table>
+</div>
+</div><p>here test <code>emacs-lisp</code> :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nf">message</span> <span class="s">&#34;%s - %s&#34;</span> <span class="s">&#34;hello&#34;</span> <span class="s">&#34;world&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>How to Evaluate Code Blocks</p>
+<p>Org captures the results of the code block evaluation and
+inserts them in the Org file, right after the code block.</p>
+<p>By calling a named code block from an Org mode buffer or a
+table. Org can call the named code blocks from the current Org
+mode buffer or from the “Library of Babel”.</p>
+<p>The syntax for ‘CALL’ keyword is:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">... call_&lt;name&gt;(&lt;arguments&gt;) ...
+... call_&lt;name&gt;[&lt;inside header arguments&gt;](&lt;arguments&gt;)[&lt;end header arguments&gt;] ...
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p><em>name</em> 参数的使用</p>
+<p>假设我们需要调用其他文件里面的函数 <a href="org_call_test">demo-one</a>，则需要按照以下方
+法来进行操作:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">#+CALL: org_call_test:sayHello()
+
+#+RESULTS:
+: &#34;hello world&#34;
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>org_call_test 是一个文件</li>
+<li>sayHello 是上面文件的一个名字为 <code>sayHello</code> 的代码块。</li>
+</ul>
+</li>
+<li>
+<p><em>arguments</em> 参数的使用</p>
+<p>现在我在另外一个文件中的 <code>org_call_test</code> 中，名为 <code>sayHello</code> 的
+代码块中的代码如下：</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nb">defun</span> <span class="nv">sayHello</span><span class="p">(</span><span class="nv">n</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">format</span> <span class="s">&#34;%s&#34;</span> <span class="p">(</span><span class="nf">message</span> <span class="p">(</span><span class="nf">number-to-string</span> <span class="nv">n</span><span class="p">))))</span>
+<span class="p">(</span><span class="nv">sayHello</span> <span class="nv">n</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>现在咱们调用它，如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">#+CALL: org_call_test:sayHello(n=5)
+
+#+RESULTS:
+: 5
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><em>inside header arguments</em> 参数的使用</p>
+<p>Org passes inside header arguments to the named code block
+using the header argument syntax. Inside header arguments apply
+to code block evaluation.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">#+CALL: org_call_test:sayHello(n=5) [:results output]
+
+#+RESULTS:
+: 5
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><em>end header agruments</em> 参数的使用</p>
+<p>End header arguments affect the results returned by the code
+block.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">#+CALL: org_call_test:sayHello(n=5) [:results md]
+
+#+RESULTS:
+: 5
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Limit code block evaluation</p>
+<p>The <code>eval</code> header agruments can limit evaluation of sepcific
+code blocks and <code>CALL</code> keyword. It is useful for protection
+against evaluating untrusted code blocks by prompting for a
+confirmation.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">#+begin_src emacs-lisp :eval never(no/query/never-export/no-export/query-export)
+  (format &#34;%s&#34; (message &#34;hello world&#34;))
+#+end_src
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Cache results of evaluation</p>
+<p>The <code>cache</code> header argument is for caching results of evaluating
+code blocks.</p>
+<p>Caching results can avoid re-evaluating a code block that have
+not changed since the previous run.</p>
+<p>The caching feature is best for when code blocks are pure
+functions, that is functions that return the same value for the
+same input arguments.and that do not have side effects, and do
+not rely on external variables other than the input arguments.</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Environment of a Code Block</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Passing a default value</p>
+<p>The following syntax is used to pass arguments to code blocks
+using the ‘var’ header argument.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">:var NAME=ASSIGN
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>NAME</strong> is the name of the variable bound in the code block
+body. <strong>ASSIGN</strong> is a literal value, such as a string, a number, a
+reference to a table, a list, a literal example, another code
+block—with or without arguments—or the results of evaluating a
+code block.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<table>
+<thead>
+<tr>
+<th>1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nf">length</span> <span class="nv">table</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The <strong>colnames</strong> header argument accepts ‘yes’, ‘no’, or ‘nil’
+values. The default value is ‘nil’:if an input table has
+column names—because the second row is a horizontal rule—then
+Org removes the column names.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<table>
+<thead>
+<tr>
+<th>a</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>b</td>
+</tr>
+<tr>
+<td>c</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">return</span> <span class="p">[[</span><span class="n">val</span> <span class="o">+</span> <span class="s1">&#39;*&#39;</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">row</span><span class="p">]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Similarly, the <strong>rownames</strong> header argument can take two values:
+‘yes’ or ‘no’. When set to ‘yes’, Org removes the first
+column, processes the table, puts back the first column, and
+then writes the table to the results block.</p>
+<p>Note that Emacs Lisp code blocks ignore ‘rownames’ header
+argument because of the ease of table-handling in Emacs.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<table>
+<thead>
+<tr>
+<th>&ldquo;one&rdquo;</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&ldquo;two&rdquo;</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">return</span> <span class="p">[[</span><span class="n">val</span> <span class="o">+</span> <span class="mi">10</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">row</span><span class="p">]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>list</strong></p>
+<p>A simple named list.</p>
+<ul>
+<li>simple
+<ul>
+<li>not</li>
+<li>nested</li>
+</ul>
+</li>
+<li>list</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nf">print</span> <span class="nv">x</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Note that only the top level list items are passed
+along. Nested list items are ignored.</p>
+<p>A code block name, as assigned by ‘NAME’ keyword from the
+example above, optionally followed by parentheses.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nf">*</span> <span class="mi">2</span> <span class="nf">length</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nf">*</span> <span class="mi">2</span> <span class="nv">input</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nf">*</span> <span class="nv">input</span> <span class="nv">input</span><span class="p">)</span>				<span class="c1">; input = 1 替换 double里面的变量</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>literal example</strong></p>
+<p>A literal example block named with a ‘NAME’ keyword.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">A literal example
+on two lines
+</code></pre></td></tr></table>
+</div>
+</div><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nv">concatenate</span> <span class="nf">#&#39;string</span> <span class="nv">x</span> <span class="s">&#34; for you.&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Indexing variable</strong> values enables referencing portions of a
+variable.</p>
+<p>Note that this indexing occurs before other table-related header
+arguments are applied, such as ‘hlines’, ‘colnames’ and ‘rownames’.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>a</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>b</td>
+</tr>
+<tr>
+<td>3</td>
+<td>c</td>
+</tr>
+<tr>
+<td>4</td>
+<td>d</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"> <span class="nv">data</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="extracting-source-code">Extracting Source Code</h2>
+<p>Extracting source code from code blocks is a basic task in literate
+programming.Org has features to make this easy.In literate
+programming parlance.Documents on creation are woven with code and
+documentation,and on export,the code is <strong>tangled</strong> for execution by
+a computer.Org facilitates weaving and tangling for
+producing,maintaining,sharing,and exporting literate programming
+documents.Org provides extensive customization options for
+extracting source code.</p>
+<p>When org tangles code blocks,it expands,merges,and tramsforms them.
+The org recompress them into one or more separate files,as
+configured through the options.During this tangling process,Org
+expands variables in the source code,and resolves any Noweb style
+references.</p>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Revolt</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        Tue May 26 2020
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/revolt/tags/emacs/">emacs</a>
+          <a href="/revolt/tags/orgmode/">orgmode</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/revolt/post/faq/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">ELISP FAQ</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://lovemoganna.github.io/revolt/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Revolt</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/revolt/dist/even.bd00e4ee.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

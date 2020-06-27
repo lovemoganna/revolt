@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Emacs Regular Expression - Revolt&#39;s NoteBook</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Revolt" /><meta name="description" content="The main function query-replace-regexp Test demo 1 2 3 4 &amp;lt;input type=&amp;#34;text&amp;#34; name=&amp;#34;username&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;password&amp;#34; name=&amp;#34;password&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; name=&amp;#34;email&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; name=&amp;#34;country&amp;#34;&amp;gt; Basic Concept 正则表达式的交互开发,你可以使用 re-builder 命令,在一个分离的 buffer里提供即时的视觉反馈,更方便" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with theme even" />
+
+
+<link rel="canonical" href="https://lovemoganna.github.io/revolt/post/init-emacs-regular-expression/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/revolt/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/revolt/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/revolt/favicon-16x16.png">
+<link rel="manifest" href="/revolt/manifest.json">
+<link rel="mask-icon" href="/revolt/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/revolt/dist/even.27d242e6.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Emacs Regular Expression" />
+<meta property="og:description" content="The main function query-replace-regexp Test demo 1 2 3 4 &lt;input type=&#34;text&#34; name=&#34;username&#34;&gt; &lt;input type=&#34;password&#34; name=&#34;password&#34;&gt; &lt;input type=&#34;text&#34; name=&#34;email&#34;&gt; &lt;input type=&#34;text&#34; name=&#34;country&#34;&gt; Basic Concept 正则表达式的交互开发,你可以使用 re-builder 命令,在一个分离的 buffer里提供即时的视觉反馈,更方便" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lovemoganna.github.io/revolt/post/init-emacs-regular-expression/" />
+<meta property="article:published_time" content="2020-06-06T00:00:00+08:00" />
+<meta property="article:modified_time" content="2020-06-10T16:40:56+08:00" /><meta property="og:locale" content="en_US" />
+<meta itemprop="name" content="Emacs Regular Expression">
+<meta itemprop="description" content="The main function query-replace-regexp Test demo 1 2 3 4 &lt;input type=&#34;text&#34; name=&#34;username&#34;&gt; &lt;input type=&#34;password&#34; name=&#34;password&#34;&gt; &lt;input type=&#34;text&#34; name=&#34;email&#34;&gt; &lt;input type=&#34;text&#34; name=&#34;country&#34;&gt; Basic Concept 正则表达式的交互开发,你可以使用 re-builder 命令,在一个分离的 buffer里提供即时的视觉反馈,更方便">
+<meta itemprop="datePublished" content="2020-06-06T00:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2020-06-10T16:40:56&#43;08:00" />
+<meta itemprop="wordCount" content="3151">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Emacs Regular Expression"/>
+<meta name="twitter:description" content="The main function query-replace-regexp Test demo 1 2 3 4 &lt;input type=&#34;text&#34; name=&#34;username&#34;&gt; &lt;input type=&#34;password&#34; name=&#34;password&#34;&gt; &lt;input type=&#34;text&#34; name=&#34;email&#34;&gt; &lt;input type=&#34;text&#34; name=&#34;country&#34;&gt; Basic Concept 正则表达式的交互开发,你可以使用 re-builder 命令,在一个分离的 buffer里提供即时的视觉反馈,更方便"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/revolt/" class="logo">Revolt</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/revolt/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/revolt/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/revolt/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/revolt/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/revolt/" class="logo">Revolt</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/revolt/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/revolt/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/revolt/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/revolt/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Emacs Regular Expression</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> Sat Jun 6 2020 </span>
+        
+          <span class="more-meta"> 3151 words </span>
+          <span class="more-meta"> 7 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-main-function">The main function</a>
+      <ul>
+        <li><a href="#test-demo">Test demo</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-concept">Basic Concept</a>
+      <ul>
+        <li><a href="#syntax-of-regexps">Syntax of Regexps</a></li>
+      </ul>
+    </li>
+    <li><a href="#re-build">re-build</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="the-main-function">The main function</h2>
+<ul>
+<li><strong><strong>query-replace-regexp</strong></strong></li>
+</ul>
+<h3 id="test-demo">Test demo</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;username&#34;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;password&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;password&#34;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;email&#34;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;country&#34;</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="basic-concept">Basic Concept</h2>
+<p>正则表达式的交互开发,你可以使用 <code>re-builder</code> 命令,在一个分离的
+buffer里提供即时的视觉反馈,更方便开发调试.</p>
+<h3 id="syntax-of-regexps">Syntax of Regexps</h3>
+<p>了解下写正则表达式的规则.</p>
+<p>正则表达式有一些语法,一些字符是特殊的结构,其余很普通.</p>
+<p>普通字符是一个匹配到字符(别的也匹配不到)简单的正则表达式.</p>
+<p>特殊字符有 <code>. * + ? [ ^ $ \</code>.</p>
+<p>如果在一个字符的尾部替换需要使用 特殊字符 <code>]</code>.</p>
+<p>如果在一个字符的内部替换需要使用 特殊字符 <code>-</code>.</p>
+<p><code>[:</code> 和 <code>:]</code> 将字符类包含在字符的替换当中.</p>
+<p>其他出现在正则表达式的任何字符都是普通的,除非前面有 <code>\</code> 转义.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">    例如, &#39;f&#39; 不是一个特殊字符,所以它是普通的,因此 &#39;f&#39; 是一个只能匹配到字符串&#39;f&#39;的正则表达式.
+    
+    它不能匹配到字符串 &#39;fg&#39;,只能匹配到字符的一部分.
+
+    因此, &#39;o&#39; 是一个仅能匹配到 &#39;o&#39; 的正则表达式.
+</code></pre></td></tr></table>
+</div>
+</div><p>任何两个正则表达式 <code>a</code> 和 <code>b</code> 可以被连接起来.结果就是一个可以匹配
+字符串的正则表达式.如果 <code>a</code> 匹配一定数量的字符串的开头, <code>b</code> 匹配其
+余的字符.</p>
+<p>一个简单的例子,我们可以连接正则表达式 <code>f</code> 和 <code>o</code> 来得到正则表达式
+<code>fo</code>, 这样匹配到的只有字符 <code>fo</code>. 要想变得更猛点,你需要使用一些特殊
+的正则表达式结构.</p>
+<h4 id="regexp-special-special-characters">Regexp Special                                                                              :Special characters:</h4>
+<p>打开 <code>M-x re-builder</code> 测试正则表达式的作用.</p>
+<ul>
+<li>
+<p>测试DEMO &mdash;&mdash;&mdash;- 测试 <code>.</code> 的作用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">aabbccddeeffgg
+</code></pre></td></tr></table>
+</div>
+</div><p><code>.</code> 可以匹配任意单个字符(换行符除外).</p>
+</li>
+<li>
+<p>测试DEMO2 &mdash;&mdash;&mdash;- 测试 <code>*</code> 的作用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">asdkjhiksdnfld
+baaaaaaabbbbbbb
+</code></pre></td></tr></table>
+</div>
+</div><p><code>*</code> 是一个后缀运算符,意味着尽可能多的匹配前面的正则表达式.</p>
+<p><code>a*</code> 表示匹配任意数量的 <code>a</code>,甚至是没有 <code>a</code>.</p>
+<p>但是假设正则表达式为 <code>ao*</code> , 只要带a 的都会被匹配到,即便是没有
+<code>o</code>,如果有o的话,它会尽可能多的匹配 <code>ao</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">aoaoaoa
+aooaaooa
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">caaar
+</code></pre></td></tr></table>
+</div>
+</div><p>采用匹配规则 <code>ca*ar</code> 来进行匹配.</p>
+<p>这个时候 <code>ca*</code> 配置 <code>caaa</code>,让 <code>ar</code> 来匹配剩下 <code>r</code>,这很明显是错
+误的. <code>*</code> 会修改结构,让匹配模式的其余部分成为可能.也就是让
+<code>ca*</code> 匹配 <code>caa</code>, 然后让 <code>ar</code> 匹配剩下的 <code>ar</code>.</p>
+</li>
+<li>
+<p>测试DEMO3 &mdash;&mdash;&mdash;- 测试 <code>+</code> 的作用</p>
+<p>这是一个后缀运算符,类似与 <code>*</code>, 除了它必须匹配前面的表达式至少一
+次.例如: <code>ca+r</code> 可以匹配字符串 <code>car</code> 和 <code>caaaar</code> 但是不能匹配到
+字符串 <code>cr</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">cr
+car
+caaaar
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>测试DEMO4 &mdash;&mdash;&mdash;- 测试 <code>?</code> 的作用</p>
+<p><code>?</code> 是一个后缀运算符,和 <code>*</code> 类似,但是必须匹配前面的表达式中的一
+个,或者都不匹配.例如: <code>ca?r</code> 匹配 <code>cr</code> 或者 <code>car</code>,别的也就啥也
+不匹配了.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">car
+ca
+cr
+caaaar
+crrra
+</code></pre></td></tr></table>
+</div>
+</div><p><code>ca?r</code></p>
+</li>
+<li>
+<p>测试DEMO5 &mdash;&mdash;&mdash;- 测试 <code>*?</code> | <code>+?</code> | <code>??</code> 的作用</p>
+<p><code>*</code> | <code>+</code> | <code>?</code> 都是非贪心运算符.</p>
+<p>那么哪些操作符尽可能最大量的匹配子字符串哪?哪些非贪心变体匹配尽
+可能少的子字符串哪?</p>
+<ol>
+<li>
+<p><code>c[ad]*a</code></p>
+<p>最小的结果就是 <code>ca</code>,最长的结果就以 <code>a</code> 为结尾,然后只要满足
+字符是 <code>a</code> 或者 <code>d</code> 中的一个字符就可以.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">cdaaada
+caaadaadaa
+cadfa
+caddadadcaa
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>c[ad]*?a</code>  &mdash;&mdash;&mdash;- 测试 <code>*?</code> 的作用</p>
+<p><code>[ad]*?</code> ,假设 <code>*</code> 匹配到 <code>a?</code>,再接着假设, <code>a?</code> 里面的 <code>?</code>
+一个也不匹配,那结果就是 <code>ca</code>.</p>
+<p><code>[ad]*?</code>,假设 <code>*</code> 匹配到 <code>d?</code>,再接着假设, <code>d?</code> 里面的 <code>?</code> 匹
+配的是 <code>d</code> ,那就过就是 <code>cda</code>.</p>
+<p>反正不管你怎么假设,它结尾必定是一个 <code>a</code>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>测试DEMO6 &mdash;&mdash;&mdash;- 测试 <code>[ ... ]</code> 的作用</p>
+<p><code>[ ... ]</code> 是一个可替换的字符,从 <code>[</code> 开始,由 <code>]</code> 结束.比如
+<code>[ad]*</code> 可以匹配任意由 <code>a</code> 和 <code>b</code> 组成的任意字符串(包括空字符串).
+比如 <code>c[ad]*r</code>,既能匹配到 <code>cr</code>, <code>car</code>, <code>cdr</code>, <code>cadr</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">cadr
+</code></pre></td></tr></table>
+</div>
+</div><p>你也可以在一个字符替换里面包括字符范围,通过用 <code>-</code> 来连接它们.比
+如: <code>[a-z]</code> 匹配任意小写的 <code>ASCII</code> letter.范围也可以自由的用个
+人字符混在在一起,例如 <code>[a-z$%.]</code> ,这将会匹配任意小写的 ASCII 字
+母,或者 <code>$</code>, <code>%</code> ,或者 <code>.</code>.</p>
+<p>常用的正则表达式特殊字符在字符替换里面并不特殊.</p>
+<p>完全不同的字符集是特殊的内部字符替换: <code>]</code> | <code>_</code> | <code>^</code>.</p>
+<p>要想在字符替换里面包含一个 <code>]</code> ,你必须让它在第一个字符.例如:
+<code>[]a]</code> 匹配 <code>]</code> or <code>a</code>.</p>
+<p>要想包含一个 <code>_</code>, 可以在替换字符的开头或者结尾写 <code>_</code>,或者作为范
+围的上界.因此, <code>[]_]</code> 匹配所有的 <code>]</code> 和 <code>_</code></p>
+<p>要想在替换字符里面包含一个 <code>^</code>, 你可以放在开头的任何地方.</p>
+<p>下面范围的概念只是针对于EMACS:</p>
+<ol>
+<li>
+<p>如果变量 <code>case-fold-seacrh</code> value is <code>non-nil</code> , <code>[a-z]</code>
+also matches upper-case letters.</p>
+</li>
+<li>
+<p>一个范围不受语言环境的排列序列所影响: 它经常表示 codepoint之
+间的边界范围的字符集,所以 <code>[a-z]</code> 匹配的只有 ASCII 字母.</p>
+</li>
+<li>
+<p>作为一个特殊案例,如果范围边界是 8位字节,其他范围边界应该是一
+个单字节字符,那这个范围匹配的只有单字节字符.</p>
+</li>
+<li>
+<p>如果一个范围的下界高于它的上界,那这个范围就是空的,表示没有任
+何字符.比如: <code>[b-a]</code> 就会匹配失败.但 <code>[^b-a]</code> 会匹配任何字,
+包括 newline. 然而,下界应该至少高于上界, <code>[c-a]</code> 这种情况应
+该避免.</p>
+</li>
+</ol>
+<p>一个替换字符也可以制定命名字符集.这是POSIX的特色.例如:
+<code>[[:ascii]]:</code> 会匹配任何 ASCII 字符.它应该像下面这样写:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">[[:ascii:]]
+</code></pre></td></tr></table>
+</div>
+</div><p>使用一个字符集等价于在那个集合里面提及每个字符.但是后者实际过程
+中并不可行,因为一些集合包含了上千个不同的字符.一个字符集不应该
+被视为范围的下界或者上界.</p>
+</li>
+<li>
+<p>测试DEMO7 &mdash;&mdash;&mdash;- 测试 <code>[^ ... ]</code> 的作用</p>
+<p><code>[^</code> 起始于互补的替换字符.这将匹配除了被指定的任何字符.因此,
+<code>[^a-z0-9A-Z]</code> 匹配除了数字和字母的所有字符.</p>
+<p><code>^</code> 不是替换字符中的特殊字符,除非它是第一个字符. <code>^</code> 后面的字符
+被当作第一个字符处理.( <code>_</code> 和 <code>]</code> 也不是特殊的.)</p>
+<p>一个互补的替换字符可以匹配 newline, 除非 newline 被字符集提及不
+能被匹配到.可以对比编程中处理正则表达式的方法,例如 <code>grep</code>.</p>
+<p>你可以指定命名字符串集,就像在替换字符一样. 例如: <code>[^[:ascii:]]</code>
+匹配任何 非ASCII 字符.</p>
+</li>
+<li>
+<p>测试DEMO8 &mdash;&mdash;&mdash;- 测试 <code>^</code> 的作用</p>
+<p>当匹配一个buffer的时候, <code>^</code> 匹配空字符串,但仅有行首的文本被匹
+配.(或者仅有具有访问权限的buffer的开头被匹配).否则它将不会匹配
+任何东西.因此, <code>^foo</code> 匹配一个出现在行首的 <code>foo</code>.</p>
+<p>当匹配一个字符串而不是buffer的时候, <code>^</code> 匹配字符串的开头 或者 newline 字符后面的
+部分.</p>
+<p>出于历史兼容性原因, <code>^</code> 仅可以被用于正则表达式的开头,或者 <code>\(</code>
+, <code>\(?:</code>, <code>\|</code> 之后.</p>
+</li>
+<li>
+<p>测试DEMO9 &mdash;&mdash;&mdash;- 测试 <code>$</code> 的作用</p>
+<p>和 <code>^</code> 类似,但是仅匹配行尾(或者具备访问权限的buffer的行尾部),因
+此, <code>x+$</code> 匹配一个或者多个以 <code>x</code> 为结尾的字符串.</p>
+<p>当匹配字符串而不是buffer的时候, <code>$</code> 匹配字符串的末尾或者newline
+字符之前的部分.</p>
+</li>
+<li>
+<p>测试DEMO10 &mdash;&mdash;&mdash;- 测试 <code>\</code> 的作用</p>
+<p><code>\</code> 主要有2个函数:</p>
+<ol>
+<li>
+<p>它引用特殊字符(包括 <code>\</code>).</p>
+</li>
+<li>
+<p>它介绍了附加的特殊结构.</p>
+<p>因为 <code>\</code> 引用了特殊字符, <code>\$</code> 是一个仅能匹配到 <code>$</code> 的正则表
+达式, <code>\[</code> 是仅能匹配到 <code>[</code> 的正则表达式,以此类推.</p>
+<p>注意 <code>\</code> 在读取Lisp 字符串的时候也有特殊含义,必须用 <code>\</code> 来进
+行引用.例如: 正则表达式匹配 <code>\</code> 字符是 <code>\\</code>. 想要写一个Lisp字符
+串包含字符 <code>\\</code>, Lisp语法需要你引用每一个带 <code>\</code> 的 <code>\</code>. 因此,匹
+配 <code>\</code> 的正则表达式的读取语法是 <code>\\\\</code>.</p>
+<p>所以要想匹配 <code>\a\a</code> ,你的正则表达式可以写成 <code>&quot;\\\\.*a$&quot;</code></p>
+</li>
+</ol>
+</li>
+<li>
+<p>如果特殊字符的特殊含义没有场景,它们将会被视为普通字符.例
+如: <code>*foo</code> 将会被视为 <code>*</code>. 因为 <code>\</code> 不是特殊的内部替代
+字符,它不能移除具有特殊含义的 <code>_</code> and <code>]</code>. 当他们没有特
+殊含义的时候,也不能引用这些字符.在它们有特殊含义的地
+方, <code>\</code> 可以合法的放在这些字符的前面.例如, <code>[^\]</code>,
+<code>&quot;[^\\]&quot;</code>,这将匹配除了下划线在外的任意单个字符.</p>
+<p>在实际过程中,大多数的 <code>]</code> 出现在正则表达式关闭字符替代,
+因此很特殊.然而,有时候一个正则表达式可能尝试匹配一个带
+着 <code>[</code> 和 <code>]</code> 的复杂文字模式.</p>
+<p>在一些场景下,它可能必须仔细的解析这个正则,从明确哪
+个方括号来关闭字符交替开始.比如,现在给你一个 <code>[^][]]</code> ,
+它是由互补的字符替代 <code>[^][]</code>,(这将匹配没有方括号的任意
+单个字符),后面跟着一个文字 <code>]</code>.</p>
+<p><a href="~/.emacs.d/lisp/private/revolt_Blog/static/images/flameshot/emacs-regex.png">     EMACS_REGEX</a></p>
+<p>这里指的是不匹配 <code>[</code> ,但是最终能匹配到 <code>]]]</code> 这种情况.</p>
+<p>额外的规则就是正则表达式的开头, <code>[</code> 是特殊的, 但 <code>]</code> 不
+是.直到最后一个未引用的 <code>[</code>, 之后我们处在一个字符替换中.
+<code>[</code> 不再是特殊的(除了 <code>[</code> 开始于一个新的字符集这种情
+况.),但是 <code>]</code> 是特殊的.除非 <code>]</code> 后面暂时跟着特殊字符
+<code>[</code> 或者 <code>[</code> 后面跟着一个 <code>^</code>,直到下一个不在字符集尾部
+的特殊 <code>]</code>. 字符替代最终会恢复正则表达式的普通语法.未引
+用的 <code>[</code> 是特殊的,但是 <code>]</code> 并不特殊.</p>
+<p>PS: 没有案例印证,这段话很傻逼.</p>
+</li>
+</ul>
+<h2 id="re-build">re-build</h2>
+<p>re-build 是一个让你可以交互式构建正则表达式,可以让你在屏幕上看到匹
+配到了什么东西.</p>
+<p>你可以自定义 <code>reb-re-syntax</code> 或者设置变量 <code>reb-re-syntax</code> 来兼容你
+的匹配规则.</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Revolt</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        Wed Jun 10 2020
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/revolt/post/polymode/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Ploymode</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/revolt/post/init-archlinux/">
+            <span class="next-text nav-default">Arch Linux Tips</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://lovemoganna.github.io/revolt/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Revolt</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/revolt/dist/even.bd00e4ee.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

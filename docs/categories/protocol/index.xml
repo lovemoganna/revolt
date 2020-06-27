@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>protocol on Revolt&#39;s NoteBook</title>
+    <link>https://lovemoganna.github.io/revolt/categories/protocol/</link>
+    <description>Recent content in protocol on Revolt&#39;s NoteBook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 22 Mar 2020 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://lovemoganna.github.io/revolt/categories/protocol/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>gnutls</title>
+      <link>https://lovemoganna.github.io/revolt/post/gnutls/</link>
+      <pubDate>Sun, 22 Mar 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/gnutls/</guid>
+      <description>&lt;p&gt;learn how to use gnutls slove cask contract melpa.org 443 question.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo on Revolt&#39;s NoteBook</title>
+    <link>https://lovemoganna.github.io/revolt/categories/hugo/</link>
+    <description>Recent content in hugo on Revolt&#39;s NoteBook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 20 Mar 2020 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://lovemoganna.github.io/revolt/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Theme preview</title>
+      <link>https://lovemoganna.github.io/revolt/post/even/</link>
+      <pubDate>Tue, 10 Jul 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/even/</guid>
+      <description>&lt;p&gt;just is even theme preview&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>hugo faq</title>
+      <link>https://lovemoganna.github.io/revolt/post/hugo/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/hugo/</guid>
+      <description>&lt;p&gt;hugo blog feature explore.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

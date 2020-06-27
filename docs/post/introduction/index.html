@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Elisp introduction - Revolt&#39;s NoteBook</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Revolt" /><meta name="description" content="Elisp Notational Conventions.
+" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with theme even" />
+
+
+<link rel="canonical" href="https://lovemoganna.github.io/revolt/post/introduction/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/revolt/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/revolt/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/revolt/favicon-16x16.png">
+<link rel="manifest" href="/revolt/manifest.json">
+<link rel="mask-icon" href="/revolt/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/revolt/dist/even.27d242e6.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Elisp introduction" />
+<meta property="og:description" content="Elisp Notational Conventions." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lovemoganna.github.io/revolt/post/introduction/" />
+<meta property="article:published_time" content="2020-03-24T00:00:00+08:00" />
+<meta property="article:modified_time" content="2020-03-24T21:01:42+08:00" /><meta property="og:locale" content="zh_CN" />
+<meta itemprop="name" content="Elisp introduction">
+<meta itemprop="description" content="Elisp Notational Conventions.">
+<meta itemprop="datePublished" content="2020-03-24T00:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-24T21:01:42&#43;08:00" />
+<meta itemprop="wordCount" content="891">
+
+
+
+<meta itemprop="keywords" content="elisp," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Elisp introduction"/>
+<meta name="twitter:description" content="Elisp Notational Conventions."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/revolt/" class="logo">Revolt</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/revolt/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/revolt/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/revolt/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/revolt/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/revolt/" class="logo">Revolt</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/revolt/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/revolt/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/revolt/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/revolt/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Elisp introduction</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> Tue Mar 24 2020 </span>
+        <div class="post-category">
+            <a href="/revolt/categories/elisp/"> elisp </a>
+            </div>
+          <span class="more-meta"> 891 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#some-trems">Some Trems</a></li>
+    <li><a href="#nil-and-t">nil and t</a></li>
+    <li><a href="#evaluation-notation">Evaluation Notation</a></li>
+    <li><a href="#printing-notation">Printing Notation</a></li>
+    <li><a href="#error-message">Error Message</a></li>
+    <li><a href="#buffer-text-notation">Buffer Text Notation</a></li>
+    <li><a href="#format-of-descriptions">Format of Descriptions</a>
+      <ul>
+        <li><a href="#a-sample-function-description"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> A sample Function Description</a></li>
+        <li><a href="#a-simple-variable-description">A simple variable description</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="hint">
+      <p>[NOTE] Updated <span class="timeago" datetime="2020-03-24T21:01:42" title="March 24, 2020">March 24, 2020</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <p>Elisp Notational Conventions.</p>
+<h2 id="some-trems">Some Trems</h2>
+<ul>
+<li>
+<p>the lisp reader</p>
+</li>
+<li>
+<p>the lisp printer</p>
+<p>the above of lexical convert textual representation of lisp
+objects into actual lisp object,and vice versa.</p>
+</li>
+</ul>
+<p>keywords: metasyntactic variables, agruments, function</p>
+<h2 id="nil-and-t">nil and t</h2>
+<p>In Elisp, the symbol <code>nil</code> has three separate meanings:</p>
+<ul>
+<li>it is a symbol with the name <code>'nil'</code></li>
+<li>it is the logical truth value <code>false</code></li>
+<li>it it the <strong>empty list</strong>-the list of zero elements.when used as a
+variable,nil always has the value nil.</li>
+</ul>
+<p>As far as the following testing, <code>'()'</code> and <code>nil</code> are identical:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nf">print</span> <span class="p">(</span><span class="nf">message</span> <span class="s">&#34;the value of () is %S&#34;</span> <span class="p">()))</span> 
+<span class="p">(</span><span class="nf">print</span> <span class="p">(</span><span class="nf">message</span> <span class="s">&#34;the value of nil is %S&#34;</span> <span class="no">nil</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">
+&#34;the value of () is nil&#34;
+
+&#34;the value of nil is nil&#34;
+</code></pre></td></tr></table>
+</div>
+</div><p>so they stand for the same object,the symbol <em>nil</em>.</p>
+<p>In this manual,we write <code>()</code> when we wish to emphasize that it
+means the <strong>empty list</strong>,and we write <code>nil</code> when we wish to emphasize
+that it means the truth value <code>false</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nf">cons</span> <span class="ss">&#39;foo</span> <span class="p">())</span> 				<span class="c1">;Emphasize the empty list</span>
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">foo-flag</span> <span class="no">nil</span><span class="p">)</span>			<span class="c1">;Emphasize the truth value false</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>In contexts where a truth value is expected,any <code>non-nil</code> value is
+considered to be <strong>true</strong>.</p>
+<p>However, <strong>t</strong> is the perfered way to represent the truth value
+<code>true</code>.when you need to choose a vlaue that represents true,and
+there is no other basic for choosing, use <code>t</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nf">print</span> <span class="p">(</span><span class="nf">message</span> <span class="s">&#34;the value of t is %S&#34;</span> <span class="no">t</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">
+&#34;the value of t is t&#34;
+</code></pre></td></tr></table>
+</div>
+</div><p>In Elisp, <strong>nil</strong> and <strong>t</strong> are special symbols that always evalute to
+themselves.This is so that you do not need to <strong>quote</strong> them to use
+them as constants in a program.</p>
+<h2 id="evaluation-notation">Evaluation Notation</h2>
+<p>A lisp expression that you can evaluate is called a form.</p>
+<p>Evaluating a form always produces a result,which is a Lisp Object.</p>
+<p>When a form is macro call,it expands into a new form for lisp to
+evaluate.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nv">third</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span><span class="p">))</span>			<span class="c1">;third is a macro defined symbol call</span>
+   <span class="nv">==&gt;</span> <span class="p">(</span><span class="nf">car</span> <span class="p">(</span><span class="nf">cdr</span> <span class="p">(</span><span class="nf">cdr</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span><span class="p">))))</span>
+   <span class="nv">=&gt;</span> <span class="nv">c</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>To help describe one form,we sometimes show another form that
+produces identical results.To exact equivalence of two forms is
+indicated with &ldquo;==&rdquo;.The question not big.</p>
+<h2 id="printing-notation">Printing Notation</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nb">progn</span>
+  <span class="p">(</span><span class="nf">prin1</span> <span class="ss">&#39;foo</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">princ</span> <span class="s">&#34;\n&#34;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">prin1</span> <span class="ss">&#39;bar</span><span class="p">)</span>
+  <span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">foo
+bar
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="error-message">Error Message</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nf">+</span> <span class="mi">34</span> <span class="ss">&#39;x</span><span class="p">)</span>  <span class="c1">;error--&gt; Wrong type argument: number-or-marker-p, x</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="buffer-text-notation">Buffer Text Notation</h2>
+<p>Some examples describe modifications to the contents of a
+buffers,by showing the before and after versions of the text.These
+examples show the contents of the buffer in question between two
+lines of dashes containing the buffer name.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">---------- Buffer: foo ----------
+This is the -!-contents of foo.
+---------- Buffer: foo ----------
+
+(insert &#34;changed &#34;)
+⇒ nil
+---------- Buffer: foo ----------
+This is the changed -!-contents of foo.
+---------- Buffer: foo ----------
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="format-of-descriptions">Format of Descriptions</h2>
+<p>Function,variables,macros,commands,user options,and special forms
+are described in this manual in a uniform format.</p>
+<p>The first line of a description contains the name of item followed
+by its argument,if any,</p>
+<p>The category-function,variable,or whatever appears at the beginning
+of the line.The description follows on <strong>succeeding lines</strong>, sometimes
+with examples.</p>
+<h3 id="a-sample-function-description"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> A sample Function Description</h3>
+<p>In a function description,the name of the function being
+descripted appears first.It is followed on the same line by a list
+of argument names.These name are also used in the body of the
+description,to stand for the values of the arguments.</p>
+<ul>
+<li>
+<p>The appearance of the keyword <strong>&amp;optional</strong> in the argument list
+indicates subsquent arguments may be ommited (ommited agruments
+default to nil).Do not write <strong>&amp;optional</strong> when you call the
+function.</p>
+</li>
+<li>
+<p>The keyword <strong>&amp;rest</strong> (which must be followed by a single argument
+name) indicates that any number of arguments can follow.The
+single argument name following <strong>&amp;rest</strong> receives,as its value,a
+list of all the remaining arguments passed to the function.Do
+not write <strong>&amp;rest</strong> when you call the function.</p>
+<p>Now,e.g.</p>
+<p>TODO</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nb">defun</span> <span class="nv">foo</span> <span class="p">(</span><span class="nv">integer1</span> <span class="kp">&amp;optional</span> <span class="nv">integer2</span> <span class="kp">&amp;rest</span> <span class="nv">integers</span><span class="p">)</span>
+  <span class="p">)</span>
+    
+<span class="p">(</span><span class="nv">foo</span> <span class="mi">1</span> <span class="mi">5</span> <span class="mi">3</span> <span class="mi">9</span><span class="p">)</span>				<span class="c1">;16</span>
+<span class="p">(</span><span class="nv">foo</span> <span class="mi">5</span><span class="p">)</span>					<span class="c1">;14</span>
+    
+<span class="p">(</span><span class="nv">foo</span> <span class="nv">w</span> <span class="nv">x</span> <span class="nv">y</span> <span class="o">...</span><span class="p">)</span> <span class="nv">==</span> <span class="p">(</span><span class="nf">+</span> <span class="p">(</span><span class="nf">-</span> <span class="nv">x</span> <span class="nv">w</span><span class="p">)</span> <span class="nv">y</span> <span class="o">...</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>By convention,any arguments whose name contains the name of a
+type is expected to be of that type.(e.g. integer,integer1 or
+buffer).</p>
+<p>A plural(复数) of a type (such as buffers) often means a list of
+objects of that type.</p>
+<p>An argument named object may be of any type.</p>
+<p>For a list of Emacs object types,See <code>lisp Data Types</code>.</p>
+<p>An argument with any other sort of name (e.g. new-file) is
+specific to the function;if the function has a documentation
+string,the type of the argument should be described there.see
+<code>Documentation</code>.</p>
+<p>See <code>lambda Expression</code> ,for a more complete description of
+arguments modified by <code>&amp;optional</code> and <code>&amp;rest</code>.</p>
+</li>
+</ul>
+<h3 id="a-simple-variable-description">A simple variable description</h3>
+<p>A variable is a name that can be bound (or set) to an object.The
+object to which a variable is bound is called a value(变量被绑定的对象称为值);we say also that variable holds that value.Although
+nearly all veriables can be set by the users,certain variables
+exist specifically so that users can change them;these are called
+<strong>user options</strong>.Ordinary variables and user options are described
+using a format like that for functions,except that there are no
+arguments.</p>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Revolt</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        Tue Mar 24 2020
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/revolt/tags/elisp/">elisp</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/revolt/post/basic2/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Elisp Basic</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/revolt/post/git/">
+            <span class="next-text nav-default">git faq</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://lovemoganna.github.io/revolt/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Revolt</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/revolt/dist/even.bd00e4ee.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

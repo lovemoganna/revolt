@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>LAMBDA EXPRESSIONS - Revolt&#39;s NoteBook</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Revolt" /><meta name="description" content="A lambda expression is a function object written in lisp.
+" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with theme even" />
+
+
+<link rel="canonical" href="https://lovemoganna.github.io/revolt/post/lambda-expressions/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/revolt/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/revolt/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/revolt/favicon-16x16.png">
+<link rel="manifest" href="/revolt/manifest.json">
+<link rel="mask-icon" href="/revolt/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/revolt/dist/even.27d242e6.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="LAMBDA EXPRESSIONS" />
+<meta property="og:description" content="A lambda expression is a function object written in lisp." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lovemoganna.github.io/revolt/post/lambda-expressions/" />
+<meta property="article:published_time" content="2020-03-09T00:00:00+08:00" />
+<meta property="article:modified_time" content="2020-03-14T21:57:00+08:00" /><meta property="og:locale" content="zh_CN" />
+<meta itemprop="name" content="LAMBDA EXPRESSIONS">
+<meta itemprop="description" content="A lambda expression is a function object written in lisp.">
+<meta itemprop="datePublished" content="2020-03-09T00:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-14T21:57:00&#43;08:00" />
+<meta itemprop="wordCount" content="737">
+
+
+
+<meta itemprop="keywords" content="elisp,Lambda," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="LAMBDA EXPRESSIONS"/>
+<meta name="twitter:description" content="A lambda expression is a function object written in lisp."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/revolt/" class="logo">Revolt</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/revolt/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/revolt/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/revolt/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/revolt/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/revolt/" class="logo">Revolt</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/revolt/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/revolt/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/revolt/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/revolt/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">LAMBDA EXPRESSIONS</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> Mon Mar 9 2020 </span>
+        <div class="post-category">
+            <a href="/revolt/categories/lambda/"> Lambda </a>
+            <a href="/revolt/categories/elisp/"> Elisp </a>
+            </div>
+          <span class="more-meta"> 737 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#lambda-components">Lambda Components</a></li>
+    <li><a href="#simple-lambda">Simple Lambda</a></li>
+    <li><a href="#agrument-list">Agrument list</a></li>
+    <li><a href="#function-documentation">Function Documentation</a></li>
+    <li><a href="#anonymous-function">Anonymous function</a></li>
+    <li><a href="#function-names">Function Names</a></li>
+    <li><a href="#local-variables">Local Variables</a></li>
+    <li><a href="#function-documentation">Function Documentation</a></li>
+    <li><a href="#defining-commands">Defining Commands</a></li>
+    <li><a href="#local-variables">Local Variables</a></li>
+    <li><a href="#anonymous-function">Anonymous function</a></li>
+    <li><a href="#function-names">Function Names</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="hint">
+      <p>[NOTE] Updated <span class="timeago" datetime="2020-03-14T21:57:00" title="March 14, 2020">March 14, 2020</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <p>A lambda expression is a function object written in lisp.</p>
+<p>example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nb">lambda</span><span class="p">(</span><span class="nv">x</span><span class="p">)</span>
+  <span class="s">&#34;return the hyperbolic consine of X (双曲线余弦值)&#34;</span>
+  <span class="p">(</span><span class="nf">*</span> <span class="mf">0.5</span> <span class="p">(</span><span class="nf">+</span> <span class="p">(</span><span class="nf">exp</span> <span class="nv">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">exp</span> <span class="p">(</span><span class="nf">-</span> <span class="nv">x</span><span class="p">))))</span>
+  <span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lambda</td>
+<td>(x)</td>
+<td>return the hyperbolic consine of X (双曲线余弦值)</td>
+<td>(* 0.5 (+ (exp x) (exp (- x))))</td>
+</tr>
+</tbody>
+</table>
+<p>In Emacs lisp,such a list is a valid expression which evaluates to a
+function object.</p>
+<p>A lambda expression,by itself,has no name;it is an anonymous
+function.Althogh lamda expressions can be used this way (see <a href="#anonymous-function">Anonymous
+function</a>),they more commonly associated with symbols to make named
+functions (See <a href="#function-names">Function Names</a>).Before going into these detail,the
+following subsections describe the componenets of a lambda expression
+and what they do.</p>
+<ul>
+<li><a href="#lambda-components">Lambda Components</a>: The parts of a lambda expression.</li>
+<li><a href="#simple-lambda">Simple Lambda</a>: A simple example.</li>
+<li><a href="#agrument-list">Agrument list</a>: Details and special features of arguments list.</li>
+<li><a href="#function-documentation">Function Documentation</a>: How to put documentation in a function.</li>
+</ul>
+<h2 id="lambda-components">Lambda Components</h2>
+<p>A lambda expression is a list that looks like this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nb">lambda</span> <span class="p">(</span><span class="nv">arg-variables...</span><span class="p">)</span>
+  <span class="p">[</span><span class="nv">documentation-string</span><span class="p">]</span>
+  <span class="p">[</span><span class="nv">interactive-declaration</span><span class="p">]</span>
+  <span class="nv">body-forms...</span>
+  <span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The first element of a lambda expresion is always the symbol lambda.
+This indicates that the list represents a function.The reason
+function are defined to start with lambda is so that other lists,
+intended for other uses,will not accidentally be valid as
+functions.</p>
+<p>The second element is a list of symbols-<strong>the argument variable
+names</strong>.This is called the lambda list.When a lisp function is
+called,the argument values are matched up against the variables in
+the lambda list,which are given local bindings with the values
+provided.See <a href="#local-variables">Local Variables</a>.</p>
+<p>The documentation string is a lisp string object placed within the
+function definition to describe the function for the Emacs help
+facilities.See <a href="#function-documentation">Function Documentation</a>.</p>
+<p>The interactive declaration is a list of the form(interactive
+<em>code-string</em>).This declares how to provide agruments if the
+function is used interactively.Functions with this declaration are
+called commands;they can be called using <code>M-x</code> or bound to a
+key.Functions not intended to be called in this way should not have
+interactive declaration.See <a href="#defining-commands">Defining Commands</a>,for how to write an
+interactive declaration.</p>
+<p>The rest of the elements are the body of the function: the lisp
+code to do the work of the function (or, as a lisp programmer would
+say, &ldquo;a list of lisp forms to evaluate&rdquo;). The value returned by the
+function is the value returned by the last element of the body.</p>
+<h2 id="simple-lambda">Simple Lambda</h2>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nb">lambda</span> <span class="p">(</span><span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span><span class="p">)</span> <span class="p">(</span><span class="nf">+</span> <span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lambda</td>
+<td>(a b c)</td>
+<td>(+ a b c)</td>
+</tr>
+</tbody>
+</table>
+<p>How to we call this lambda function?</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nf">funcall</span>
+ <span class="p">(</span><span class="nb">lambda</span> <span class="p">(</span><span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span><span class="p">)(</span><span class="nf">+</span> <span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span><span class="p">))</span>
+ <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">6
+</code></pre></td></tr></table>
+</div>
+</div><p>Note that the arguments can be the reuslts of other function
+calls,as in this example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nf">funcall</span> <span class="p">(</span><span class="nb">lambda</span> <span class="p">(</span><span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span><span class="p">)</span> <span class="p">(</span><span class="nf">+</span> <span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span><span class="p">))</span> <span class="mi">1</span> <span class="p">(</span><span class="nf">*</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="nf">+</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">6</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">20
+</code></pre></td></tr></table>
+</div>
+</div><p>As these examples show,you can use a form with a lambda expression
+as its CAR to make local variables and give them values.</p>
+<p>In the old days of lisp,this technique was the only way to bind and
+initialize local variables.</p>
+<p>But nowadays,it is clearer to use the special form <code>let</code> for this
+purpose.(see <a href="#local-variables">Local Variables</a>).Lambda Expression are mainly used as
+anonymous function for passing as arguments to other function.(see
+<a href="#anonymous-function">Anonymous function</a>),or stored as symbol function definitions to
+produce named functions(see <a href="#function-names">Function Names</a>).</p>
+<h2 id="agrument-list">Agrument list</h2>
+<h2 id="function-documentation">Function Documentation</h2>
+<h2 id="anonymous-function">Anonymous function</h2>
+<h2 id="function-names">Function Names</h2>
+<h2 id="local-variables">Local Variables</h2>
+<p>Global variables have values that last until <em>explicitly
+superseded</em> （显式的取代）with new vlaues.</p>
+<p>When a variable has a local value,we say that it is &ldquo;locally bound&rdquo;
+to that value,and that it is a &ldquo;local variable&rdquo;.</p>
+<p>For example,when a function is called,its agrument variables
+receive local values,which are the actual arguments supplied to the
+function call; these local bindings take effect within the body of
+the function.</p>
+<p>To take another example, the <code>let</code> special form explicitly
+establishes local bindings for specific variabels,which take effect
+only within the body of the <code>let</code> form.</p>
+<p>We also speak of the <code>&quot;global binding&quot;</code>,which is where
+(conceptually 概念上) the global value is kept.</p>
+<p>Establishing a local binding saves away the variable &rsquo;s previous
+value(or lack of one).We say that the previous value is
+shdowed.Both global and local values my be shadowed.It determines
+the value returned by</p>
+<h2 id="function-documentation">Function Documentation</h2>
+<h2 id="defining-commands">Defining Commands</h2>
+<h2 id="local-variables">Local Variables</h2>
+<h2 id="anonymous-function">Anonymous function</h2>
+<h2 id="function-names">Function Names</h2>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Revolt</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        Sat Mar 14 2020
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/revolt/tags/elisp/">elisp</a>
+          <a href="/revolt/tags/lambda/">Lambda</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/revolt/post/x/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">A sets of X command</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/revolt/post/faq/">
+            <span class="next-text nav-default">ELISP FAQ</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://lovemoganna.github.io/revolt/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Revolt</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/revolt/dist/even.bd00e4ee.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

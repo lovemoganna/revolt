@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://lovemoganna.github.io/revolt/sitemap.xml

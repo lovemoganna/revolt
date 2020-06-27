@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>elisp on Revolt&#39;s NoteBook</title>
+    <link>https://lovemoganna.github.io/revolt/categories/elisp/</link>
+    <description>Recent content in elisp on Revolt&#39;s NoteBook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 24 Mar 2020 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://lovemoganna.github.io/revolt/categories/elisp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Elisp Basic</title>
+      <link>https://lovemoganna.github.io/revolt/post/basic2/</link>
+      <pubDate>Tue, 24 Mar 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/basic2/</guid>
+      <description>&lt;p&gt;Elisp Basic Example.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Elisp introduction</title>
+      <link>https://lovemoganna.github.io/revolt/post/introduction/</link>
+      <pubDate>Tue, 24 Mar 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/introduction/</guid>
+      <description>&lt;p&gt;Elisp Notational Conventions.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>LAMBDA EXPRESSIONS</title>
+      <link>https://lovemoganna.github.io/revolt/post/lambda-expressions/</link>
+      <pubDate>Mon, 09 Mar 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/lambda-expressions/</guid>
+      <description>&lt;p&gt;A lambda expression is a function object written in lisp.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ELISP FAQ</title>
+      <link>https://lovemoganna.github.io/revolt/post/faq/</link>
+      <pubDate>Tue, 25 Feb 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/faq/</guid>
+      <description>&lt;p&gt;There have a little Elisp question.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

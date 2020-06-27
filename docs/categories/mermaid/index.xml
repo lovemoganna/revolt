@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mermaid on Revolt&#39;s NoteBook</title>
+    <link>https://lovemoganna.github.io/revolt/categories/mermaid/</link>
+    <description>Recent content in mermaid on Revolt&#39;s NoteBook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 19 Mar 2020 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://lovemoganna.github.io/revolt/categories/mermaid/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>mermaid</title>
+      <link>https://lovemoganna.github.io/revolt/post/mermaid/</link>
+      <pubDate>Thu, 19 Mar 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://lovemoganna.github.io/revolt/post/mermaid/</guid>
+      <description>&lt;p&gt;chart tools &lt;!-- raw HTML omitted --&gt;mermaid&lt;!-- raw HTML omitted --&gt; intergrate with Emacs.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

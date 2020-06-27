@@ -1,0 +1,52 @@
++++
+title = "Org Mode Capture"
+date = 2020-06-26T00:00:00+08:00
+lastmod = 2020-06-26T23:56:06+08:00
+draft = false
+locale = "en_US"
++++
+
+如何使用org mode捕获功能是很重要的。为什么？
+
+捕获一词，可以将其视为猎杀。这种具有明显攻击性的词汇，应该足够重视。
+
+<!--more-->
+
+
+## Introduction {#introduction}
+
+我已经很久没有使用过 org mode capture 了，太过于烦人。之前寻找一些
+鸟不拉屎的配置的时候，弄过一堆玩意。后果就是不常用，用的不顺手。
+
+
+## What is org capture? {#what-is-org-capture}
+
+-   Record content form anywhere
+-   Configurable templates
+-   Store in org-mode file
+
+> - Coding  - 制作你感兴趣的代码片段。
+> - Reading  - 记录笔记或者感寤。
+> - Standup  - 给团队分发任务。
+> - Journaling - 记录想法和感受。
+
+
+## What are the benefits of using org mode capture {#what-are-the-benefits-of-using-org-mode-capture}
+
+
+### My question {#my-question}
+
+我在学习过程中，一般不是遇到一个两个问题，而且我有思维多动症的毛病，
+就现在而言，我已经积累了很多问题，这让我感到心情沉闷。
+
+-   学习shell，让我在linux世界中来去自如。
+-   hugo博客升级问题，性能调优。
+-   将博客从github映射到域名身上。
+-   org capture template
+
+我不可能在一个org file包含所有的这些问题，这就显得很烦人。所以就需
+要在这些Org file 里面包含一个附件，这样就能顺利的达到快速记录问题
+的目的。
+
+所以就需要写 org capture 模板。把这些没有完成的事件都插入到对应的
+Org file 当中。
