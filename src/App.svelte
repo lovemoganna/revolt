@@ -1,13 +1,26 @@
 <script>
-    export let name, src, string, count
+    export let src, string, count
     import Nested from './Nested.svelte'
-    import Button from './Button.svelte'
+
+    import LogRocket from 'logrocket'
+    LogRocket.init('1aufxy/sveltejs')
+
     $: doubled = count * 2
+
+    function handleClick() {
+        count += 1
+    }
+
+    // Start using modular practice SvelteJS
+  import Basic from './Introduction/1-basic.svelte'
+  import DynamicAttributes from './Introduction/2-dynamic-attributes.svelte'
 </script>
 
 <main>
-    <h1>hello {name.toUpperCase()}!</h1>
-    <img alt="微博 {name.toUpperCase()} Shopping" src={src} />
+  <Basic name="小明"></Basic>
+  <DynamicAttributes alt="Shopping Girl" src={src}></DynamicAttributes>
+
+    <!-- <img alt="微博 {name.toUpperCase()} Shopping" src={src} /> -->
 
     <div class="styling">
         <p>Image resources reference Shorthand attributes</p>
@@ -33,7 +46,6 @@
         <p>Svelte的核心是功能强大的反应系统，用于使DOM与您的应用程序状态
             保持同步</p>
         <p>下面是一个响应事件DEMO</p>
-        <Button />
     </div>
 
     <div class="styling reactivity declarations">
