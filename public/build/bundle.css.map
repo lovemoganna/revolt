@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "../../3-pstyling.svelte"
+  ],
+  "sourcesContent": [
+    "<p>This is a pagagraph in 3-pstyling component!</p>\n<style>\n p {\n     color: purple;\n     font-family: Hack;\n        font-size: 2em;\n    }\n</style>\n"
+  ],
+  "names": [],
+  "mappings": "AAEC,CAAC,cAAC,CAAC,AACC,KAAK,CAAE,MAAM,CACb,WAAW,CAAE,IAAI,CACd,SAAS,CAAE,GAAG,AAClB,CAAC"
+}
